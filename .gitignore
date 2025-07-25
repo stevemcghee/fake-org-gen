@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Data files
+*.csv
+*.zip
+*.mbox
+
+# OS-specific
+.DS_Store
+*.swo
+*.swp
+
+# IDEs
+.vscode/
+.idea/

@@ -1,0 +1,40 @@
+
+import mailbox
+import os
+
+def create_mbox_from_eml_files(eml_dir, mbox_path):
+    """
+    Combines all .eml files from a directory into a single .mbox file.
+    """
+    # Create a new mbox file
+    mb = mailbox.mbox(mbox_path)
+    mb.lock()
+    
+    try:
+        eml_files = [f for f in os.listdir(eml_dir) if f.endswith('.eml')]
+        print(f"Found {len(eml_files)} .eml files to process.")
+        
+        for eml_file in eml_files:
+            file_path = os.path.join(eml_dir, eml_file)
+            with open(file_path, 'rb') as f:
+                # Create a message object from the .eml file content
+                msg = mailbox.mboxMessage(f.read())
+                # Add the message to the mbox
+                mb.add(msg)
+                
+        print(f"Successfully added {len(eml_files)} emails to {mbox_path}")
+        
+    finally:
+        mb.flush()
+        mb.close() # This also releases the lock
+
+if __name__ == "__main__":
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    eml_directory = os.path.join(script_dir, 'email_samples')
+    mbox_file_path = os.path.join(eml_directory, 'samples.mbox')
+    
+    # Check if the directory exists
+    if not os.path.isdir(eml_directory):
+        print(f"Error: Directory not found at {eml_directory}")
+    else:
+        create_mbox_from_eml_files(eml_directory, mbox_file_path)

@@ -1,0 +1,1793 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20250729T144500Z
+LOCATION:Middle-earth
+DTSTART:20250729T141500Z
+SUMMARY:Mushroom Hunting
+UID:1558357b-24d0-4f53-bfbf-1747dcc497ca@1558.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20250801T144500Z
+LOCATION:Middle-earth
+DTSTART:20250801T141500Z
+SUMMARY:Mushroom Hunting
+UID:0574264c-4285-4f0c-a1ea-49f4b40f8268@0574.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20251006T134500Z
+LOCATION:Middle-earth
+DTSTART:20251006T131500Z
+SUMMARY:Mushroom Hunting
+UID:777e09f0-ee94-4ef2-8d2a-5799acd48b38@777e.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20251201T154500Z
+LOCATION:Middle-earth
+DTSTART:20251201T134500Z
+SUMMARY:Council Meeting
+UID:b1fc702e-7990-49e2-8103-c23977012309@b1fc.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250828T153000Z
+LOCATION:Middle-earth
+DTSTART:20250828T150000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:27dc8c2a-9eaf-4d8f-bdb6-113db87e54db@27dc.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20260116T161500Z
+LOCATION:Middle-earth
+DTSTART:20260116T151500Z
+SUMMARY:Council Meeting
+UID:9cd9d1e6-50f5-462d-b0f7-b84beb587c82@9cd9.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251028T121500Z
+LOCATION:Middle-earth
+DTSTART:20251028T101500Z
+SUMMARY:Reading Ancient Scrolls
+UID:9bead3ac-c51d-4522-be51-d765170507a0@9bea.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251212T150000Z
+LOCATION:Middle-earth
+DTSTART:20251212T133000Z
+SUMMARY:Pipe-weed Contemplation
+UID:9b3966f6-6be5-4060-8598-353f6b5b160b@9b39.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20260113T134500Z
+LOCATION:Middle-earth
+DTSTART:20260113T124500Z
+SUMMARY:Second Breakfast Strategy
+UID:5609f9d7-99ae-490c-b139-9024fc633ce4@5609.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Frodo
+DTEND:20251229T123000Z
+LOCATION:Middle-earth
+DTSTART:20251229T120000Z
+SUMMARY:Writing memoirs
+UID:334ef995-243f-4407-b33a-1a18adca5335@334e.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20260116T111500Z
+LOCATION:Middle-earth
+DTSTART:20260116T101500Z
+SUMMARY:Pipe-weed Contemplation
+UID:90028ce8-d594-47b7-8d9d-3a1743a38b8e@9002.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20250912T164500Z
+LOCATION:Middle-earth
+DTSTART:20250912T144500Z
+SUMMARY:Mushroom Hunting
+UID:0093b064-1403-4b66-b2f0-9678b9aca9ab@0093.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20251111T170000Z
+LOCATION:Middle-earth
+DTSTART:20251111T151500Z
+SUMMARY:Second Breakfast Strategy
+UID:c3cf842e-e05c-4759-ad87-b1232a037cf4@c3cf.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Gandalf
+DTEND:20250919T140000Z
+LOCATION:Middle-earth
+DTSTART:20250919T120000Z
+SUMMARY:Reading Ancient Scrolls
+UID:0b68b19e-e9f7-47ea-8e54-d3f189336648@0b68.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20260115T170000Z
+LOCATION:Middle-earth
+DTSTART:20260115T154500Z
+SUMMARY:Practicing Smoke Rings
+UID:dc1e5d71-5cba-48d7-bc2e-6f4738c3586a@dc1e.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20251204T104500Z
+LOCATION:Middle-earth
+DTSTART:20251204T101500Z
+SUMMARY:Second Breakfast Strategy
+UID:496bc1fb-3733-42ae-b964-866faf963380@496b.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Eagle Summit for Gandalf and Frodo
+DTEND:20251112T113000Z
+LOCATION:Middle-earth
+DTSTART:20251112T093000Z
+SUMMARY:Eagle Summit
+UID:e1dd9742-1265-4d32-a79a-556cec6c48ca@e1dd.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20251001T134500Z
+LOCATION:Middle-earth
+DTSTART:20251001T131500Z
+SUMMARY:Council Meeting
+UID:80748fd0-4e31-4c16-b3ea-6b92095c30b6@8074.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20260109T103000Z
+LOCATION:Middle-earth
+DTSTART:20260109T090000Z
+SUMMARY:Pipe-weed Contemplation
+UID:4570affe-40c9-4186-bc7a-b74cd1a81cad@4570.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251217T124500Z
+LOCATION:Middle-earth
+DTSTART:20251217T114500Z
+SUMMARY:Practicing Smoke Rings
+UID:58ea1400-db0c-4b38-b9a8-11fa6076a6fb@58ea.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20251110T111500Z
+LOCATION:Middle-earth
+DTSTART:20251110T101500Z
+SUMMARY:Council Meeting
+UID:c1b33211-fb60-4a53-ab7c-6eafe14c3b98@c1b3.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20251110T170000Z
+LOCATION:Middle-earth
+DTSTART:20251110T153000Z
+SUMMARY:Mushroom Hunting
+UID:efea1d30-2595-4ade-9e96-bb5cb1ff37cf@efea.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20250917T110000Z
+LOCATION:Middle-earth
+DTSTART:20250917T093000Z
+SUMMARY:Mushroom Hunting
+UID:7c71da8a-7602-461f-bb16-c5d7d3d28138@7c71.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20250725T103000Z
+LOCATION:Middle-earth
+DTSTART:20250725T090000Z
+SUMMARY:Pipe-weed Contemplation
+UID:7e9ed461-139e-49f1-9447-505712182bea@7e9e.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20251210T164500Z
+LOCATION:Middle-earth
+DTSTART:20251210T151500Z
+SUMMARY:Fireworks Planning
+UID:3ce892c2-6e26-4715-8e33-ac29fb327592@3ce8.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20260101T161500Z
+LOCATION:Middle-earth
+DTSTART:20260101T154500Z
+SUMMARY:Writing memoirs
+UID:a75c55df-cbaf-4701-9b65-ddc558852221@a75c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20251128T113000Z
+LOCATION:Middle-earth
+DTSTART:20251128T093000Z
+SUMMARY:Fireworks Planning
+UID:18afe5ec-abfa-43c3-a29b-0fc047dc0b0b@18af.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Eagle Summit for Gandalf and Frodo
+DTEND:20250808T140000Z
+LOCATION:Middle-earth
+DTSTART:20250808T130000Z
+SUMMARY:Eagle Summit
+UID:b4b525fd-af69-4181-a589-aecbd1712d2d@b4b5.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20250908T160000Z
+LOCATION:Middle-earth
+DTSTART:20250908T143000Z
+SUMMARY:Second Breakfast Strategy
+UID:428fa6da-a161-4638-b7f7-74757b775228@428f.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20250925T153000Z
+LOCATION:Middle-earth
+DTSTART:20250925T150000Z
+SUMMARY:Reviewing the Map
+UID:d410af1c-ddb2-40c5-a8fa-9fa2caaa36d8@d410.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20250725T123000Z
+LOCATION:Middle-earth
+DTSTART:20250725T120000Z
+SUMMARY:Writing memoirs
+UID:17058f80-0207-49ec-b016-72a7b452712f@1705.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Frodo
+DTEND:20251023T104500Z
+LOCATION:Middle-earth
+DTSTART:20251023T101500Z
+SUMMARY:Writing memoirs
+UID:175dca21-5b18-4fe8-9de8-d302114e76f9@175d.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20251216T134500Z
+LOCATION:Middle-earth
+DTSTART:20251216T114500Z
+SUMMARY:Mushroom Hunting
+UID:1bb919fc-9e8e-4080-8392-3bae56f2d770@1bb9.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20251118T111500Z
+LOCATION:Middle-earth
+DTSTART:20251118T094500Z
+SUMMARY:Practicing Smoke Rings
+UID:b6fbc85e-2d2b-4e18-b50e-b4c6e54f328b@b6fb.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251106T154500Z
+LOCATION:Middle-earth
+DTSTART:20251106T144500Z
+SUMMARY:Practicing Smoke Rings
+UID:46b6a425-6ca4-495c-bf4b-83c03c9863fd@46b6.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20260119T114500Z
+LOCATION:Middle-earth
+DTSTART:20260119T094500Z
+SUMMARY:Reviewing the Map
+UID:a4e83e69-6946-44cc-ba69-5bcc3a58648a@a4e8.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20250725T161500Z
+LOCATION:Middle-earth
+DTSTART:20250725T141500Z
+SUMMARY:Pipe-weed Contemplation
+UID:2915d11b-bc3a-4a39-93fe-07831e5fbc3b@2915.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20250815T111500Z
+LOCATION:Middle-earth
+DTSTART:20250815T094500Z
+SUMMARY:Pipe-weed Contemplation
+UID:fb552875-9229-4d4f-9bcf-52d3aaa47a53@fb55.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251106T141500Z
+LOCATION:Middle-earth
+DTSTART:20251106T134500Z
+SUMMARY:Pipe-weed Contemplation
+UID:18916d11-a1b6-4373-aa00-8597cdf0f561@1891.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20250820T121500Z
+LOCATION:Middle-earth
+DTSTART:20250820T101500Z
+SUMMARY:Second Breakfast Strategy
+UID:552f017e-182a-4402-a406-6ccad8d1643d@552f.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20260109T163000Z
+LOCATION:Middle-earth
+DTSTART:20260109T143000Z
+SUMMARY:Writing memoirs
+UID:d737097a-deeb-444b-a6f0-cb1cdf6ff1fa@d737.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20251210T114500Z
+LOCATION:Middle-earth
+DTSTART:20251210T094500Z
+SUMMARY:Council Meeting
+UID:ee988399-c449-492d-a8a8-f9c159dc1a11@ee98.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Gandalf
+DTEND:20250819T134500Z
+LOCATION:Middle-earth
+DTSTART:20250819T124500Z
+SUMMARY:Reading Ancient Scrolls
+UID:79c5ff12-68b7-447a-b694-8b22cfcfbdde@79c5.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Frodo
+DTEND:20250821T123000Z
+LOCATION:Middle-earth
+DTSTART:20250821T103000Z
+SUMMARY:Writing memoirs
+UID:f90cae61-ad59-4e90-8c16-d629bb460ad8@f90c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20250827T121500Z
+LOCATION:Middle-earth
+DTSTART:20250827T114500Z
+SUMMARY:Practicing Smoke Rings
+UID:cdeb4593-f3b4-4281-a35e-8d1f7464e433@cdeb.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20251125T124500Z
+LOCATION:Middle-earth
+DTSTART:20251125T114500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:3b40d116-ea60-4c49-82ab-d3d0213f2da4@3b40.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251208T113000Z
+LOCATION:Middle-earth
+DTSTART:20251208T103000Z
+SUMMARY:Pipe-weed Contemplation
+UID:95e27e6d-1cba-4f63-9397-53f7ee235e8b@95e2.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20251125T144500Z
+LOCATION:Middle-earth
+DTSTART:20251125T131500Z
+SUMMARY:Writing memoirs
+UID:4bb1b3eb-5246-453e-a469-aec92410409d@4bb1.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20251229T104500Z
+LOCATION:Middle-earth
+DTSTART:20251229T091500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:0027c6d3-1485-4dc2-84f7-366cb5901a7c@0027.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20251224T144500Z
+LOCATION:Middle-earth
+DTSTART:20251224T141500Z
+SUMMARY:Practicing Smoke Rings
+UID:a797af28-058f-421f-8d77-a70faddca2b2@a797.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20250820T160000Z
+LOCATION:Middle-earth
+DTSTART:20250820T153000Z
+SUMMARY:Second Breakfast Strategy
+UID:ab6057f4-819c-4f7a-91a0-e4f1278cf50d@ab60.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20251024T141500Z
+LOCATION:Middle-earth
+DTSTART:20251024T121500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:621abed2-6622-4630-93d7-2b5b94e3a3da@621a.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Eagle Summit for Gandalf and Frodo
+DTEND:20250918T113000Z
+LOCATION:Middle-earth
+DTSTART:20250918T100000Z
+SUMMARY:Eagle Summit
+UID:a4b15bca-edf8-4d9d-9c23-5b2ee240c235@a4b1.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20260102T111500Z
+LOCATION:Middle-earth
+DTSTART:20260102T101500Z
+SUMMARY:Second Breakfast Strategy
+UID:a0f0903b-33e0-4bc9-b27b-67400522d0d8@a0f0.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251013T151500Z
+LOCATION:Middle-earth
+DTSTART:20251013T144500Z
+SUMMARY:Practicing Smoke Rings
+UID:348b4f61-0a41-41ca-ad36-02a658409216@348b.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20250813T110000Z
+LOCATION:Middle-earth
+DTSTART:20250813T093000Z
+SUMMARY:Pipe-weed Contemplation
+UID:10ea5f06-c556-4ca7-be72-465c6f0797af@10ea.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20260112T163000Z
+LOCATION:Middle-earth
+DTSTART:20260112T150000Z
+SUMMARY:Pipe-weed Contemplation
+UID:850e7828-68d9-4e79-a86f-b4fe397e4f49@850e.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20250904T133000Z
+LOCATION:Middle-earth
+DTSTART:20250904T123000Z
+SUMMARY:Second Breakfast Strategy
+UID:fcd234b4-ce17-4d57-8925-c1c1e6b1e83d@fcd2.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20251027T161500Z
+LOCATION:Middle-earth
+DTSTART:20251027T154500Z
+SUMMARY:Writing memoirs
+UID:2a6c2c8b-9328-4a00-89b8-8c8b37a89cb2@2a6c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250815T131500Z
+LOCATION:Middle-earth
+DTSTART:20250815T114500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:21336641-84d1-449d-93e3-2772a52743b3@2133.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20251208T130000Z
+LOCATION:Middle-earth
+DTSTART:20251208T113000Z
+SUMMARY:Pipe-weed Contemplation
+UID:9caae40b-a5b3-4cff-8072-5378ac801149@9caa.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251016T133000Z
+LOCATION:Middle-earth
+DTSTART:20251016T130000Z
+SUMMARY:Reading Ancient Scrolls
+UID:f0fb2b45-94ea-49b8-99f0-fcd423f9cdd8@f0fb.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20251007T161500Z
+LOCATION:Middle-earth
+DTSTART:20251007T144500Z
+SUMMARY:Reviewing the Map
+UID:88f24d27-0a3a-43c7-bac2-c8490b856174@88f2.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251121T143000Z
+LOCATION:Middle-earth
+DTSTART:20251121T123000Z
+SUMMARY:Reading Ancient Scrolls
+UID:5f02a228-0e34-4a94-9eb0-15b754c47aec@5f02.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20251111T111500Z
+LOCATION:Middle-earth
+DTSTART:20251111T101500Z
+SUMMARY:Journey Debrief
+UID:a66c3ce4-92ce-42b5-8c91-28c1a91d4441@a66c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20250822T163000Z
+LOCATION:Middle-earth
+DTSTART:20250822T143000Z
+SUMMARY:Pipe-weed Contemplation
+UID:e56297f3-6a4d-4704-904e-980682cbb6ee@e562.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Gandalf
+DTEND:20251013T103000Z
+LOCATION:Middle-earth
+DTSTART:20251013T090000Z
+SUMMARY:Reading Ancient Scrolls
+UID:7abe39fb-5348-46fb-98cb-3c6e8892eef6@7abe.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20250917T143000Z
+LOCATION:Middle-earth
+DTSTART:20250917T123000Z
+SUMMARY:Practicing Smoke Rings
+UID:5263be45-5432-4ba8-bd20-6f92884ce9e7@5263.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250821T100000Z
+LOCATION:Middle-earth
+DTSTART:20250821T093000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:cb1a060d-4c05-4236-a2a2-a2dbd680d2c3@cb1a.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20250801T140000Z
+LOCATION:Middle-earth
+DTSTART:20250801T130000Z
+SUMMARY:Pipe-weed Contemplation
+UID:77351a87-886c-4d46-9ee9-39276b6a7394@7735.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Gandalf
+DTEND:20251208T101500Z
+LOCATION:Middle-earth
+DTSTART:20251208T094500Z
+SUMMARY:Reading Ancient Scrolls
+UID:7862430f-9430-4c40-b648-e538e57e1375@7862.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251225T110000Z
+LOCATION:Middle-earth
+DTSTART:20251225T093000Z
+SUMMARY:Reading Ancient Scrolls
+UID:32f42bf4-2ed6-4f44-b7b4-09e7bc879123@32f4.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20250818T170000Z
+LOCATION:Middle-earth
+DTSTART:20250818T150000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:aaff022b-ff4d-4633-ad12-5ded4930697a@aaff.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20250729T103000Z
+LOCATION:Middle-earth
+DTSTART:20250729T093000Z
+SUMMARY:Second Breakfast Strategy
+UID:fecda142-5967-4786-bbb0-b3093906d4d6@fecd.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20250825T124500Z
+LOCATION:Middle-earth
+DTSTART:20250825T104500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:06f2aa14-41e0-4339-b51d-556fd4326476@06f2.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20250918T144500Z
+LOCATION:Middle-earth
+DTSTART:20250918T134500Z
+SUMMARY:Journey Debrief
+UID:80e7b675-bca1-4510-9d18-42b1a188a941@80e7.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Eagle Summit for Gandalf and Frodo
+DTEND:20251113T123000Z
+LOCATION:Middle-earth
+DTSTART:20251113T120000Z
+SUMMARY:Eagle Summit
+UID:78ee419d-a025-4d59-b0cd-bc91aec8d971@78ee.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20251021T153000Z
+LOCATION:Middle-earth
+DTSTART:20251021T140000Z
+SUMMARY:Fireworks Planning
+UID:e151062a-0b51-45e7-90c6-7b2c6af186be@e151.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20251205T170000Z
+LOCATION:Middle-earth
+DTSTART:20251205T153000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:d9eb9faf-2d87-40be-9697-f3649d9fc6d4@d9eb.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20250909T154500Z
+LOCATION:Middle-earth
+DTSTART:20250909T141500Z
+SUMMARY:Mushroom Hunting
+UID:95b80f79-2e43-4885-8b29-117639b20af2@95b8.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20251225T144500Z
+LOCATION:Middle-earth
+DTSTART:20251225T134500Z
+SUMMARY:Reviewing the Map
+UID:c287da94-c4df-4445-8c5e-07e6a241cebe@c287.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251229T164500Z
+LOCATION:Middle-earth
+DTSTART:20251229T144500Z
+SUMMARY:Pipe-weed Contemplation
+UID:0184af14-b0a5-4c70-a9c4-220081ae67cc@0184.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20251008T153000Z
+LOCATION:Middle-earth
+DTSTART:20251008T150000Z
+SUMMARY:Mushroom Hunting
+UID:60fbf9fa-7a16-404f-a808-0f3c88cad67f@60fb.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Frodo
+DTEND:20251117T131500Z
+LOCATION:Middle-earth
+DTSTART:20251117T111500Z
+SUMMARY:Writing memoirs
+UID:044163d9-4b0a-4027-8177-124ab9ffee88@0441.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20251127T124500Z
+LOCATION:Middle-earth
+DTSTART:20251127T121500Z
+SUMMARY:Second Breakfast Strategy
+UID:15b38c6f-0628-4576-b551-720d1a94036e@15b3.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251121T153000Z
+LOCATION:Middle-earth
+DTSTART:20251121T143000Z
+SUMMARY:Practicing Smoke Rings
+UID:95fd9e65-43a7-4806-abb1-0a421ca2fa27@95fd.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20251003T111500Z
+LOCATION:Middle-earth
+DTSTART:20251003T094500Z
+SUMMARY:Mushroom Hunting
+UID:8267d162-f2b7-4a42-866b-9e9aa845e4c4@8267.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20250917T170000Z
+LOCATION:Middle-earth
+DTSTART:20250917T154500Z
+SUMMARY:Reading Ancient Scrolls
+UID:93460f62-4ed9-4271-8162-b57a21eee40e@9346.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20250917T114500Z
+LOCATION:Middle-earth
+DTSTART:20250917T111500Z
+SUMMARY:Practicing Smoke Rings
+UID:18ef81d5-dfaf-48f9-8e82-598bad35c7ae@18ef.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251223T120000Z
+LOCATION:Middle-earth
+DTSTART:20251223T113000Z
+SUMMARY:Practicing Smoke Rings
+UID:997ee212-f283-41b4-a591-a399dfa28215@997e.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20250828T143000Z
+LOCATION:Middle-earth
+DTSTART:20250828T130000Z
+SUMMARY:Journey Debrief
+UID:07db5137-c5cd-4a80-88c9-78ee62e6ce9f@07db.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20251226T170000Z
+LOCATION:Middle-earth
+DTSTART:20251226T154500Z
+SUMMARY:Mushroom Hunting
+UID:969fcb01-15bf-4b96-aec6-d07072fd04b8@969f.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20250806T101500Z
+LOCATION:Middle-earth
+DTSTART:20250806T094500Z
+SUMMARY:Pipe-weed Contemplation
+UID:c52935c9-8a66-4a68-ba74-e70e29a68b44@c529.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251219T094500Z
+LOCATION:Middle-earth
+DTSTART:20251219T091500Z
+SUMMARY:Practicing Smoke Rings
+UID:14c80d97-27af-4443-b571-129685ea42e8@14c8.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Gandalf
+DTEND:20251230T124500Z
+LOCATION:Middle-earth
+DTSTART:20251230T114500Z
+SUMMARY:Pipe-weed Contemplation
+UID:8ffad1c7-1412-4d04-990c-79f5939eadeb@8ffa.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250902T130000Z
+LOCATION:Middle-earth
+DTSTART:20250902T120000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:baf74bb3-d5fd-47a5-a440-6969e30d4161@baf7.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20251211T123000Z
+LOCATION:Middle-earth
+DTSTART:20251211T120000Z
+SUMMARY:Fireworks Planning
+UID:2a0b0e59-fbc4-4793-81af-5e53ddfea9e5@2a0b.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20251120T124500Z
+LOCATION:Middle-earth
+DTSTART:20251120T121500Z
+SUMMARY:Journey Debrief
+UID:c01d32a7-a4b3-476c-95cc-b40fc74168af@c01d.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20250826T123000Z
+LOCATION:Middle-earth
+DTSTART:20250826T103000Z
+SUMMARY:Reviewing the Map
+UID:3e9c7b7e-52ba-43ad-acd4-c375ef5e4622@3e9c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20250904T144500Z
+LOCATION:Middle-earth
+DTSTART:20250904T141500Z
+SUMMARY:Practicing Smoke Rings
+UID:8f7fdf20-070c-4c26-8b3d-b95b7f6260fa@8f7f.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251024T114500Z
+LOCATION:Middle-earth
+DTSTART:20251024T111500Z
+SUMMARY:Reading Ancient Scrolls
+UID:12035d2c-68b1-4cc8-b1e5-a01f17819c45@1203.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20260114T160000Z
+LOCATION:Middle-earth
+DTSTART:20260114T153000Z
+SUMMARY:Writing memoirs
+UID:85c40a60-975b-4ec0-a603-4cebbc6b63c8@85c4.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20250808T130000Z
+LOCATION:Middle-earth
+DTSTART:20250808T110000Z
+SUMMARY:Writing memoirs
+UID:eaa3786d-7709-4ae5-9a2c-7309f2941d99@eaa3.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20250908T103000Z
+LOCATION:Middle-earth
+DTSTART:20250908T090000Z
+SUMMARY:Writing memoirs
+UID:458f09cd-857d-4c2d-92e1-eebf1fec04d5@458f.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20251215T160000Z
+LOCATION:Middle-earth
+DTSTART:20251215T150000Z
+SUMMARY:Reviewing the Map
+UID:174c926f-820c-4071-bb5a-326032c34f9a@174c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20260116T124500Z
+LOCATION:Middle-earth
+DTSTART:20260116T111500Z
+SUMMARY:Reading Ancient Scrolls
+UID:04836da0-27a5-4511-baca-02d98abfd7fb@0483.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20251212T130000Z
+LOCATION:Middle-earth
+DTSTART:20251212T110000Z
+SUMMARY:Practicing Smoke Rings
+UID:65093f09-78db-4435-8497-877f9fc7b706@6509.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20251124T144500Z
+LOCATION:Middle-earth
+DTSTART:20251124T131500Z
+SUMMARY:Reviewing the Map
+UID:5b84a8f9-d3c6-4aaa-80f8-eece0e0b9f07@5b84.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251216T161500Z
+LOCATION:Middle-earth
+DTSTART:20251216T141500Z
+SUMMARY:Practicing Smoke Rings
+UID:c01fe14e-5a94-43ff-8add-08ccd1ad945c@c01f.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251007T143000Z
+LOCATION:Middle-earth
+DTSTART:20251007T123000Z
+SUMMARY:Reading Ancient Scrolls
+UID:a3322c66-2a43-443c-88d0-dc612577e7ca@a332.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20260102T144500Z
+LOCATION:Middle-earth
+DTSTART:20260102T141500Z
+SUMMARY:Pipe-weed Contemplation
+UID:a67b6e78-933a-47db-a077-3cd99f78e433@a67b.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20260119T134500Z
+LOCATION:Middle-earth
+DTSTART:20260119T131500Z
+SUMMARY:Journey Debrief
+UID:e83af714-f709-4900-8bf0-4997412b33ce@e83a.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20250923T121500Z
+LOCATION:Middle-earth
+DTSTART:20250923T111500Z
+SUMMARY:Writing memoirs
+UID:11b27a30-7848-4935-8861-6de3c8232165@11b2.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20260120T160000Z
+LOCATION:Middle-earth
+DTSTART:20260120T153000Z
+SUMMARY:Reviewing the Map
+UID:6c61de08-f399-4532-b73e-da347ce65ab9@6c61.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251218T141500Z
+LOCATION:Middle-earth
+DTSTART:20251218T121500Z
+SUMMARY:Reading Ancient Scrolls
+UID:a18ceb80-a141-4c6a-ab52-4fb3ec4f1d93@a18c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250813T123000Z
+LOCATION:Middle-earth
+DTSTART:20250813T110000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:ccd48ab8-6564-4172-a78b-74e8755928f8@ccd4.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20251126T154500Z
+LOCATION:Middle-earth
+DTSTART:20251126T134500Z
+SUMMARY:Mushroom Hunting
+UID:78d1f94d-0f17-41be-91a1-78cebf826b39@78d1.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20260121T170000Z
+LOCATION:Middle-earth
+DTSTART:20260121T150000Z
+SUMMARY:Council Meeting
+UID:4302cad7-0192-434b-85c5-e72a63a0c8c5@4302.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20250811T094500Z
+LOCATION:Middle-earth
+DTSTART:20250811T091500Z
+SUMMARY:Practicing Smoke Rings
+UID:8eefc4aa-9d85-4660-b8af-a36bbd3e1d32@8eef.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20251211T111500Z
+LOCATION:Middle-earth
+DTSTART:20251211T091500Z
+SUMMARY:Writing memoirs
+UID:eeed066d-6f87-4699-9906-608698567364@eeed.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251003T163000Z
+LOCATION:Middle-earth
+DTSTART:20251003T143000Z
+SUMMARY:Pipe-weed Contemplation
+UID:d4ae4519-8100-46cf-b329-b1bfc7ff98b5@d4ae.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251105T114500Z
+LOCATION:Middle-earth
+DTSTART:20251105T094500Z
+SUMMARY:Pipe-weed Contemplation
+UID:08232d28-e8f6-4683-bb5b-691aa2ba1920@0823.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20250922T130000Z
+LOCATION:Middle-earth
+DTSTART:20250922T113000Z
+SUMMARY:Journey Debrief
+UID:bd45c36a-88fc-4fa6-9239-6981634013a3@bd45.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20251014T121500Z
+LOCATION:Middle-earth
+DTSTART:20251014T101500Z
+SUMMARY:Mushroom Hunting
+UID:1112a972-394b-4236-801c-0985449fe620@1112.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20250807T143000Z
+LOCATION:Middle-earth
+DTSTART:20250807T133000Z
+SUMMARY:Writing memoirs
+UID:127a91bc-c2fa-4006-a0b7-f916bca6bea6@127a.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Frodo
+DTEND:20251010T154500Z
+LOCATION:Middle-earth
+DTSTART:20251010T151500Z
+SUMMARY:Writing memoirs
+UID:9f5dac0c-09c5-423f-89fb-528abe229f0f@9f5d.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250922T143000Z
+LOCATION:Middle-earth
+DTSTART:20250922T140000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:727218be-33cd-4bd8-aa38-7a698facb724@7272.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20251119T153000Z
+LOCATION:Middle-earth
+DTSTART:20251119T140000Z
+SUMMARY:Mushroom Hunting
+UID:b55ad5bb-ad9f-4477-a595-a17e9067d94a@b55a.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20250910T141500Z
+LOCATION:Middle-earth
+DTSTART:20250910T121500Z
+SUMMARY:Practicing Smoke Rings
+UID:f1dc90c0-fe40-4a23-b144-aa6b30ed6bda@f1dc.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20251015T110000Z
+LOCATION:Middle-earth
+DTSTART:20251015T100000Z
+SUMMARY:Journey Debrief
+UID:16243c88-42cc-424e-9b01-bda9d0f435e4@1624.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250930T120000Z
+LOCATION:Middle-earth
+DTSTART:20250930T113000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:1e01bb3c-200b-45f5-949c-19e0464bd24b@1e01.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20251110T124500Z
+LOCATION:Middle-earth
+DTSTART:20251110T114500Z
+SUMMARY:Mushroom Hunting
+UID:0cab176a-1542-40f5-bc64-d77429ca6a11@0cab.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20250912T143000Z
+LOCATION:Middle-earth
+DTSTART:20250912T140000Z
+SUMMARY:Reading Ancient Scrolls
+UID:5be495d0-0946-418a-823b-a9ea743b3804@5be4.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20251006T160000Z
+LOCATION:Middle-earth
+DTSTART:20251006T140000Z
+SUMMARY:Journey Debrief
+UID:4b452959-f746-4b19-9eb3-6964dedeb489@4b45.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251016T170000Z
+LOCATION:Middle-earth
+DTSTART:20251016T154500Z
+SUMMARY:Practicing Smoke Rings
+UID:9e26c682-d5be-4360-93ec-a0f1de04c845@9e26.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Frodo
+DTEND:20251127T104500Z
+LOCATION:Middle-earth
+DTSTART:20251127T101500Z
+SUMMARY:Writing memoirs
+UID:8d0f2441-a80d-45ab-ab03-64e1d9dde024@8d0f.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Eagle Summit for Gandalf and Frodo
+DTEND:20250911T130000Z
+LOCATION:Middle-earth
+DTSTART:20250911T120000Z
+SUMMARY:Eagle Summit
+UID:85fd5b9c-0084-48e0-8010-fd83baa9a0a6@85fd.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251210T143000Z
+LOCATION:Middle-earth
+DTSTART:20251210T140000Z
+SUMMARY:Pipe-weed Contemplation
+UID:a4e24f3e-8f72-4fdd-a11c-a30006d199f1@a4e2.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20250814T140000Z
+LOCATION:Middle-earth
+DTSTART:20250814T130000Z
+SUMMARY:Mushroom Hunting
+UID:8b337455-9ad0-49f4-96fe-e424a6d2fe18@8b33.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20251217T161500Z
+LOCATION:Middle-earth
+DTSTART:20251217T141500Z
+SUMMARY:Reading Ancient Scrolls
+UID:c5b7eb2a-84d2-4f7d-931e-20f1190c6d51@c5b7.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20251201T113000Z
+LOCATION:Middle-earth
+DTSTART:20251201T103000Z
+SUMMARY:Writing memoirs
+UID:df633f47-c6df-4920-893b-412a55ed418e@df63.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20250915T154500Z
+LOCATION:Middle-earth
+DTSTART:20250915T134500Z
+SUMMARY:Council Meeting
+UID:367c4797-60d4-4c27-ba06-d2b8c8647cc6@367c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20251209T123000Z
+LOCATION:Middle-earth
+DTSTART:20251209T113000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:64a5908e-6f66-42cc-ada8-e0ae697d7316@64a5.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20250805T123000Z
+LOCATION:Middle-earth
+DTSTART:20250805T113000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:2b7d9ecb-aff5-4989-bdfa-08c2a1f1da11@2b7d.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20250728T160000Z
+LOCATION:Middle-earth
+DTSTART:20250728T153000Z
+SUMMARY:Practicing Smoke Rings
+UID:8cb4a8a3-48b8-4f64-9429-2876681625b5@8cb4.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20251008T144500Z
+LOCATION:Middle-earth
+DTSTART:20251008T141500Z
+SUMMARY:Second Breakfast Strategy
+UID:7dac36de-cb37-472e-8506-73eeef7e6962@7dac.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20260105T170000Z
+LOCATION:Middle-earth
+DTSTART:20260105T153000Z
+SUMMARY:Reading Ancient Scrolls
+UID:8c33e506-3d21-4f02-bb1d-bee35687022a@8c33.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20250829T164500Z
+LOCATION:Middle-earth
+DTSTART:20250829T144500Z
+SUMMARY:Pipe-weed Contemplation
+UID:4f437604-116e-447b-871a-1524f283137b@4f43.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20250905T170000Z
+LOCATION:Middle-earth
+DTSTART:20250905T151500Z
+SUMMARY:Practicing Smoke Rings
+UID:2b11dabf-ab48-44a6-97ba-a9008b72759f@2b11.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251223T151500Z
+LOCATION:Middle-earth
+DTSTART:20251223T134500Z
+SUMMARY:Practicing Smoke Rings
+UID:b514c77a-5f16-460f-99d5-495ce5303cfd@b514.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20250806T153000Z
+LOCATION:Middle-earth
+DTSTART:20250806T143000Z
+SUMMARY:Reading Ancient Scrolls
+UID:1a246422-8163-48ee-9735-6e86caea87c7@1a24.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20250923T150000Z
+LOCATION:Middle-earth
+DTSTART:20250923T143000Z
+SUMMARY:Mushroom Hunting
+UID:4212bfa6-5f67-4226-8b40-a0045717d1b3@4212.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20250924T153000Z
+LOCATION:Middle-earth
+DTSTART:20250924T140000Z
+SUMMARY:Second Breakfast Strategy
+UID:90a38193-4e3a-43a5-8c9c-185411cf518f@90a3.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20251013T161500Z
+LOCATION:Middle-earth
+DTSTART:20251013T151500Z
+SUMMARY:Mushroom Hunting
+UID:44e07983-80dd-4186-83f1-4ad4789c5607@44e0.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20251202T151500Z
+LOCATION:Middle-earth
+DTSTART:20251202T144500Z
+SUMMARY:Journey Debrief
+UID:6e4543a2-eafb-48a4-ad7f-f1a285830a53@6e45.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20250811T153000Z
+LOCATION:Middle-earth
+DTSTART:20250811T133000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:d2d3ffa1-9257-4c47-874c-2e1cc742a9b6@d2d3.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20250805T100000Z
+LOCATION:Middle-earth
+DTSTART:20250805T093000Z
+SUMMARY:Writing memoirs
+UID:ebeb39d3-d596-48e7-a155-5e311539cba7@ebeb.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20250909T134500Z
+LOCATION:Middle-earth
+DTSTART:20250909T131500Z
+SUMMARY:Reading Ancient Scrolls
+UID:4504ac99-d70a-4184-8d17-68d658f2c590@4504.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20251111T124500Z
+LOCATION:Middle-earth
+DTSTART:20251111T111500Z
+SUMMARY:Mushroom Hunting
+UID:85080c0b-bfec-4e97-9f45-05e5494a41f6@8508.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20251217T113000Z
+LOCATION:Middle-earth
+DTSTART:20251217T103000Z
+SUMMARY:Writing memoirs
+UID:2a96a578-60fe-45c5-8e49-20d790ea022e@2a96.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20260108T121500Z
+LOCATION:Middle-earth
+DTSTART:20260108T104500Z
+SUMMARY:Second Breakfast Strategy
+UID:2189fc5f-549d-417f-b7ba-14101950aaf7@2189.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20251118T170000Z
+LOCATION:Middle-earth
+DTSTART:20251118T153000Z
+SUMMARY:Fireworks Planning
+UID:4b01444e-4be3-4bf8-84e3-aebfd10ae016@4b01.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20250826T144500Z
+LOCATION:Middle-earth
+DTSTART:20250826T134500Z
+SUMMARY:Mushroom Hunting
+UID:6384d4a4-d766-4f83-9e82-3efb509d477d@6384.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20251202T120000Z
+LOCATION:Middle-earth
+DTSTART:20251202T100000Z
+SUMMARY:Pipe-weed Contemplation
+UID:a9adff2c-a58a-4bf7-91aa-c58bfa0a4a5b@a9ad.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Eagle Summit for Gandalf and Frodo
+DTEND:20251029T131500Z
+LOCATION:Middle-earth
+DTSTART:20251029T114500Z
+SUMMARY:Eagle Summit
+UID:aec60934-2f9e-4fc8-87c9-bad8e0e40295@aec6.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20250926T111500Z
+LOCATION:Middle-earth
+DTSTART:20250926T101500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:cc257a36-4949-442e-ae0e-c70454210f7b@cc25.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Pipe-weed Contemplation for Frodo
+DTEND:20250812T151500Z
+LOCATION:Middle-earth
+DTSTART:20250812T144500Z
+SUMMARY:Pipe-weed Contemplation
+UID:aa75c5d3-df22-4341-8bb6-d1db138d8aea@aa75.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20250821T151500Z
+LOCATION:Middle-earth
+DTSTART:20250821T131500Z
+SUMMARY:Reviewing the Map
+UID:ee22fc1f-b91c-4750-8957-abaa40dcf2e7@ee22.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20251218T110000Z
+LOCATION:Middle-earth
+DTSTART:20251218T090000Z
+SUMMARY:Second Breakfast Strategy
+UID:60fd5f2d-44b1-40a5-945e-e61db5e66054@60fd.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20250725T113000Z
+LOCATION:Middle-earth
+DTSTART:20250725T103000Z
+SUMMARY:Writing memoirs
+UID:afee790f-3dca-4499-9c34-9bb6241c4052@afee.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Writing memoirs for Gandalf
+DTEND:20251209T151500Z
+LOCATION:Middle-earth
+DTSTART:20251209T134500Z
+SUMMARY:Writing memoirs
+UID:20578345-d9e0-4fb5-8562-9b617ea00bd0@2057.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20260120T103000Z
+LOCATION:Middle-earth
+DTSTART:20260120T090000Z
+SUMMARY:Fireworks Planning
+UID:a5694d5e-b736-4448-9385-6393ea1da1c8@a569.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20251103T154500Z
+LOCATION:Middle-earth
+DTSTART:20251103T144500Z
+SUMMARY:Fireworks Planning
+UID:a86c9f9a-b7c7-47c5-aee0-389fe4a21679@a86c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Frodo
+DTEND:20250812T170000Z
+LOCATION:Middle-earth
+DTSTART:20250812T154500Z
+SUMMARY:Mushroom Hunting
+UID:ae08d001-dcf7-4227-b4f0-c90c3bafb9aa@ae08.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20251203T110000Z
+LOCATION:Middle-earth
+DTSTART:20251203T103000Z
+SUMMARY:Reviewing the Map
+UID:1c9ccd6b-69c0-4961-8bb3-452f3260406f@1c9c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reading Ancient Scrolls for Frodo
+DTEND:20260105T151500Z
+LOCATION:Middle-earth
+DTSTART:20260105T134500Z
+SUMMARY:Reading Ancient Scrolls
+UID:b2051231-18f3-4cb8-9ccf-67ac9e7cb0c0@b205.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Gandalf
+DTEND:20250805T110000Z
+LOCATION:Middle-earth
+DTSTART:20250805T103000Z
+SUMMARY:Practicing Smoke Rings
+UID:f06d1b45-8f33-42ad-bacb-ea97ad1b1d51@f06d.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Council Meeting for Gandalf and Frodo
+DTEND:20251020T140000Z
+LOCATION:Middle-earth
+DTSTART:20251020T133000Z
+SUMMARY:Council Meeting
+UID:f4c926e9-7c87-421d-aab7-0bf7e86804ff@f4c9.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20250730T104500Z
+LOCATION:Middle-earth
+DTSTART:20250730T091500Z
+SUMMARY:Fireworks Planning
+UID:bae2c5be-f8c2-4417-acb5-fb23125361b3@bae2.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20251222T154500Z
+LOCATION:Middle-earth
+DTSTART:20251222T134500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:b9a6ff3a-cbf8-4e9e-b3d6-9d18a0a8682d@b9a6.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20250729T124500Z
+LOCATION:Middle-earth
+DTSTART:20250729T121500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:e29cbb73-e4a9-470b-b7ac-1180b3bcca53@e29c.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20250822T111500Z
+LOCATION:Middle-earth
+DTSTART:20250822T104500Z
+SUMMARY:Reviewing the Map
+UID:275d1b09-4067-451a-87de-7f984b480eaa@275d.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Journey Debrief for Gandalf and Frodo
+DTEND:20250904T100000Z
+LOCATION:Middle-earth
+DTSTART:20250904T093000Z
+SUMMARY:Journey Debrief
+UID:0464b979-42ad-4d5c-a8d1-9947c703f503@0464.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Gandalf
+DTEND:20250922T161500Z
+LOCATION:Middle-earth
+DTSTART:20250922T154500Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:d827ecbe-11df-43e3-be8d-b2dbc894fda4@d827.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20250731T093000Z
+LOCATION:Middle-earth
+DTSTART:20250731T090000Z
+SUMMARY:Reviewing the Map
+UID:34730452-8599-4875-8bb7-e085711d7b84@3473.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Avoiding Sackville-Bagginses for Frodo
+DTEND:20251120T120000Z
+LOCATION:Middle-earth
+DTSTART:20251120T113000Z
+SUMMARY:Avoiding Sackville-Bagginses
+UID:f8db70c4-3d55-47ed-b00b-906d8321ee59@f8db.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251128T160000Z
+LOCATION:Middle-earth
+DTSTART:20251128T150000Z
+SUMMARY:Practicing Smoke Rings
+UID:5503539a-e3fd-424c-91ed-9d35bbb20042@5503.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Reviewing the Map for Gandalf and Frodo
+DTEND:20251231T141500Z
+LOCATION:Middle-earth
+DTSTART:20251231T124500Z
+SUMMARY:Reviewing the Map
+UID:6d13dac8-36a9-4452-9712-04bfd35fac42@6d13.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+DESCRIPTION:Mushroom Hunting for Gandalf
+DTEND:20251219T154500Z
+LOCATION:Middle-earth
+DTSTART:20251219T144500Z
+SUMMARY:Mushroom Hunting
+UID:4bb7c87c-21a7-444e-92b6-07375cc44d17@4bb7.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Second Breakfast Strategy for Gandalf and Frodo
+DTEND:20251128T144500Z
+LOCATION:Middle-earth
+DTSTART:20251128T131500Z
+SUMMARY:Second Breakfast Strategy
+UID:10f1e226-347b-4650-b08c-f5e77df726dc@10f1.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=gandalf the grey <gandalf@cpets.joonix.net>:mailto:gandalf the grey <gandalf@cpets.joonix.net>
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Fireworks Planning for Gandalf and Frodo
+DTEND:20250828T130000Z
+LOCATION:Middle-earth
+DTSTART:20250828T110000Z
+SUMMARY:Fireworks Planning
+UID:20254018-c263-451d-a93a-d9c571c2e8b1@2025.org
+END:VEVENT
+BEGIN:VEVENT
+ATTENDEE;CN=frodo baggins <frodo.baggins@cpets.joonix.net>:mailto:frodo baggins <frodo.baggins@cpets.joonix.net>
+DESCRIPTION:Practicing Smoke Rings for Frodo
+DTEND:20251022T124500Z
+LOCATION:Middle-earth
+DTSTART:20251022T121500Z
+SUMMARY:Practicing Smoke Rings
+UID:edca6de0-b302-4494-8619-d08e6ba1ce6b@edca.org
+END:VEVENT
+END:VCALENDAR

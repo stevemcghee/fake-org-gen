@@ -1,0 +1,70 @@
+import csv
+import random
+import os
+import sys
+
+# Increase the field size limit for the CSV reader
+max_int = sys.maxsize
+while True:
+    # Decrease the max int value by half each time to find a value that works
+    try:
+        csv.field_size_limit(max_int)
+        break
+    except OverflowError:
+        max_int = int(max_int / 2)
+
+def sample_emails_from_csv(csv_path, num_samples=5):
+    """
+    Uses reservoir sampling to select a random sample of emails from a large
+    CSV file and saves them as .eml files.
+    """
+    reservoir = []
+    message_col_index = -1
+    
+    # First, find the index of the 'message' column from the header
+    with open(csv_path, 'r', encoding='utf-8', errors='ignore') as f:
+        reader = csv.reader(f)
+        try:
+            header = next(reader)
+            if 'message' in header:
+                message_col_index = header.index('message')
+            else:
+                print("Error: 'message' column not found in CSV header.")
+                return
+        except StopIteration:
+            print("Error: CSV file is empty.")
+            return
+
+    # Now, perform reservoir sampling
+    with open(csv_path, 'r', encoding='utf-8', errors='ignore') as f:
+        reader = csv.reader(f)
+        next(reader) # Skip header again
+        
+        for i, row in enumerate(reader):
+            if i < num_samples:
+                reservoir.append(row)
+            else:
+                j = random.randint(0, i)
+                if j < num_samples:
+                    reservoir[j] = row
+
+    # Create a directory to save the .eml files
+    output_dir = os.path.join(os.path.dirname(csv_path), 'email_samples')
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Save the sampled emails as .eml files
+    for i, sample in enumerate(reservoir):
+        if len(sample) > message_col_index:
+            email_content = sample[message_col_index]
+            file_path = os.path.join(output_dir, f"sample_email_{i + 1}.eml")
+            with open(file_path, 'w', encoding='utf-8') as f_out:
+                f_out.write(email_content)
+            print(f"Saved sample {i + 1} to {file_path}")
+        else:
+            print(f"Warning: Sample {i + 1} was malformed and skipped.")
+
+
+if __name__ == "__main__":
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_file = os.path.join(script_dir, 'emails.csv')
+    sample_emails_from_csv(csv_file, num_samples=100)
