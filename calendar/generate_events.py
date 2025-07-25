@@ -120,7 +120,7 @@ def write_to_ics(calendar, filename):
         return
         
     with open(filename, 'w') as f:
-        f.write(str(calendar))
+        f.write(calendar.serialize())
     print(f"Generated {len(calendar.events)} non-overlapping events and saved to {filename}")
 
 if __name__ == "__main__":
