@@ -1,8 +1,10 @@
+
 import random
 from datetime import datetime, timedelta
 from ics import Calendar, Event
 import os
 import pytz
+import argparse
 
 def is_overlapping(start_time, end_time, existing_events):
     """Check if a new event overlaps with any existing events."""
@@ -14,8 +16,11 @@ def is_overlapping(start_time, end_time, existing_events):
             return True
     return False
 
-def get_domains_input():
-    """Gets domains from an interactive prompt."""
+def get_domains(args_domains):
+    """Gets domains from command-line args or an interactive prompt."""
+    if args_domains:
+        return [d.strip() for d in args_domains.split(',') if d.strip()]
+    
     domains_str = input("Enter a comma-separated list of domains (e.g., domain1.com,domain2.net): ")
     domains = [d.strip() for d in domains_str.split(',') if d.strip()]
     if not domains:
@@ -34,7 +39,6 @@ def generate_event_definitions(months=6, num_events_range=(20, 40)):
         "Mushroom Hunting", "Writing memoirs", "Avoiding Sackville-Bagginses"
     ]
     
-    # Set the timezone to US/Pacific
     pacific = pytz.timezone('US/Pacific')
     start_date = datetime.now(pacific)
     end_date = start_date + timedelta(days=30 * months)
@@ -49,13 +53,12 @@ def generate_event_definitions(months=6, num_events_range=(20, 40)):
             if event_day.weekday() >= 5: continue
 
             start_hour = random.randint(business_hours[0], business_hours[1] - 2)
-            # Localize the start time to the Pacific timezone
-            start_time = pacific.localize(event_day.replace(hour=start_hour, minute=random.choice([0, 15, 30, 45]), second=0, microsecond=0))
+            start_time = event_day.replace(hour=start_hour, minute=random.choice([0, 15, 30, 45]), second=0, microsecond=0)
             duration = random.choice([30, 60, 90, 120])
             end_time = start_time + timedelta(minutes=duration)
 
             if end_time.hour >= business_hours[1]:
-                end_time = pacific.localize(event_day.replace(hour=business_hours[1], minute=0, second=0, microsecond=0))
+                end_time = event_day.replace(hour=business_hours[1], minute=0, second=0, microsecond=0)
 
             if is_overlapping(start_time, end_time, event_definitions): continue
 
@@ -121,7 +124,15 @@ def write_to_ics(calendar, filename):
     print(f"Generated {len(calendar.events)} non-overlapping events and saved to {filename}")
 
 if __name__ == "__main__":
-    domains = get_domains_input()
+    parser = argparse.ArgumentParser(description="Generate fake calendar events.")
+    parser.add_argument(
+        '--domains', 
+        type=str, 
+        help='A comma-separated list of domains to generate calendars for (e.g., "example.com,test.org").'
+    )
+    args = parser.parse_args()
+
+    domains = get_domains(args.domains)
     
     if domains:
         print("\nGenerating event definitions for Frodo and Gandalf...")
