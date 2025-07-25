@@ -62,21 +62,22 @@ def generate_event_definitions(months=6, num_events_range=(20, 40)):
 
             if is_overlapping(start_time, end_time, event_definitions): continue
 
-            event_choice = random.choice(["shared", "gandalf_solo", "frodo_solo"])
-            
-            attendees = []
-            if event_choice == "shared":
+            # 50% chance for a shared meeting, 50% for a solo meeting
+            if random.random() < 0.5:
+                # Shared meeting
                 name = random.choice(shared_event_types)
                 description = f"{name} for Gandalf and Frodo"
                 attendees = ["gandalf", "frodo"]
-            elif event_choice == "gandalf_solo":
+            else:
+                # Solo meeting, 50/50 split between Gandalf and Frodo
+                solo_user = random.choice(["gandalf", "frodo"])
                 name = random.choice(solo_event_types)
-                description = f"{name} for Gandalf"
-                attendees = ["gandalf"]
-            else: # frodo_solo
-                name = random.choice(solo_event_types)
-                description = f"{name} for Frodo"
-                attendees = ["frodo"]
+                if solo_user == "gandalf":
+                    description = f"{name} for Gandalf"
+                    attendees = ["gandalf"]
+                else:
+                    description = f"{name} for Frodo"
+                    attendees = ["frodo"]
 
             event_definitions.append({
                 "name": name, "description": description, "begin": start_time,
