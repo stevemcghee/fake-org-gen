@@ -1,9 +1,8 @@
-
-
 import random
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from ics import Calendar, Event
 import os
+import pytz
 
 def is_overlapping(start_time, end_time, existing_events):
     """Check if a new event overlaps with any existing events."""
@@ -34,7 +33,10 @@ def generate_event_definitions(months=6, num_events_range=(20, 40)):
         "Pipe-weed Contemplation", "Reading Ancient Scrolls", "Practicing Smoke Rings", 
         "Mushroom Hunting", "Writing memoirs", "Avoiding Sackville-Bagginses"
     ]
-    start_date = datetime.now(timezone.utc)
+    
+    # Set the timezone to US/Pacific
+    pacific = pytz.timezone('US/Pacific')
+    start_date = datetime.now(pacific)
     end_date = start_date + timedelta(days=30 * months)
     business_hours = (9, 17)
     
@@ -47,12 +49,13 @@ def generate_event_definitions(months=6, num_events_range=(20, 40)):
             if event_day.weekday() >= 5: continue
 
             start_hour = random.randint(business_hours[0], business_hours[1] - 2)
-            start_time = event_day.replace(hour=start_hour, minute=random.choice([0, 15, 30, 45]), second=0, microsecond=0)
+            # Localize the start time to the Pacific timezone
+            start_time = pacific.localize(event_day.replace(hour=start_hour, minute=random.choice([0, 15, 30, 45]), second=0, microsecond=0))
             duration = random.choice([30, 60, 90, 120])
             end_time = start_time + timedelta(minutes=duration)
 
             if end_time.hour >= business_hours[1]:
-                end_time = event_day.replace(hour=business_hours[1], minute=0, second=0, microsecond=0)
+                end_time = pacific.localize(event_day.replace(hour=business_hours[1], minute=0, second=0, microsecond=0))
 
             if is_overlapping(start_time, end_time, event_definitions): continue
 
