@@ -1,3 +1,5 @@
+
+
 import random
 from datetime import datetime, timedelta, timezone
 from ics import Calendar, Event
@@ -13,37 +15,24 @@ def is_overlapping(start_time, end_time, existing_events):
             return True
     return False
 
-def get_user_input():
-    """Gets domains and users from interactive prompts."""
+def get_domains_input():
+    """Gets domains from an interactive prompt."""
     domains_str = input("Enter a comma-separated list of domains (e.g., domain1.com,domain2.net): ")
     domains = [d.strip() for d in domains_str.split(',') if d.strip()]
-    
-    users = {}
-    print("Enter user details. Press Enter on an empty name when finished.")
-    while True:
-        name = input("Enter user's full name (e.g., Gandalf the Grey): ")
-        if not name:
-            break
-        prefix = input(f"Enter email prefix for {name} (e.g., gandalf): ")
-        if not prefix:
-            print("Prefix cannot be empty. Please try again.")
-            continue
-        users[name] = prefix
-        
-    if not domains or not users:
-        print("Error: Both domains and users must be provided.")
-        return None, None
+    if not domains:
+        print("Error: At least one domain must be provided.")
+        return None
+    return domains
 
-    return domains, users
-
-def generate_event_definitions(users, months=6, num_events_range=(20, 40)):
-    """Generates a list of event definitions using the provided user list."""
-    user_keys = list(users.keys())
+def generate_event_definitions(months=6, num_events_range=(20, 40)):
+    """Generates a list of event definitions for Frodo and Gandalf."""
     shared_event_types = [
-        "Project Sync", "Team Meeting", "Planning Session", "Review", "Brainstorming"
+        "Council Meeting", "Journey Debrief", "Fireworks Planning", "Eagle Summit",
+        "Reviewing the Map", "Second Breakfast Strategy"
     ]
     solo_event_types = [
-        "Focus Time", "Prep for meeting", "Task Work", "Code Review", "Documentation"
+        "Pipe-weed Contemplation", "Reading Ancient Scrolls", "Practicing Smoke Rings", 
+        "Mushroom Hunting", "Writing memoirs", "Avoiding Sackville-Bagginses"
     ]
     start_date = datetime.now(timezone.utc)
     end_date = start_date + timedelta(days=30 * months)
@@ -67,24 +56,25 @@ def generate_event_definitions(users, months=6, num_events_range=(20, 40)):
 
             if is_overlapping(start_time, end_time, event_definitions): continue
 
-            # Decide if the event is for a single user or shared
-            if len(user_keys) > 1 and random.random() > 0.3: # 70% chance of shared event if possible
-                event_type = "shared"
-                attendee_keys = random.sample(user_keys, 2) # Pick 2 users for the meeting
-            else:
-                event_type = "solo"
-                attendee_keys = [random.choice(user_keys)]
-
-            if event_type == "shared":
+            event_choice = random.choice(["shared", "gandalf_solo", "frodo_solo"])
+            
+            attendees = []
+            if event_choice == "shared":
                 name = random.choice(shared_event_types)
-                description = f"{name} for {attendee_keys[0]} and {attendee_keys[1]}"
-            else: # solo
+                description = f"{name} for Gandalf and Frodo"
+                attendees = ["gandalf", "frodo"]
+            elif event_choice == "gandalf_solo":
                 name = random.choice(solo_event_types)
-                description = f"{name} for {attendee_keys[0]}"
+                description = f"{name} for Gandalf"
+                attendees = ["gandalf"]
+            else: # frodo_solo
+                name = random.choice(solo_event_types)
+                description = f"{name} for Frodo"
+                attendees = ["frodo"]
 
             event_definitions.append({
                 "name": name, "description": description, "begin": start_time,
-                "end": end_time, "location": "Virtual", "attendees": attendee_keys
+                "end": end_time, "location": "Middle-earth", "attendees": attendees
             })
             break
         else:
@@ -92,8 +82,13 @@ def generate_event_definitions(users, months=6, num_events_range=(20, 40)):
     
     return event_definitions
 
-def create_calendar_from_definitions(event_definitions, domain, users):
-    """Creates an ics.Calendar object from event definitions for a specific domain and user set."""
+def create_calendar_from_definitions(event_definitions, domain):
+    """Creates an ics.Calendar object from event definitions for a specific domain."""
+    users_info = {
+        "gandalf": ("gandalf the grey", "gandalf"),
+        "frodo": ("frodo baggins", "frodo.baggins")
+    }
+    
     cal = Calendar()
     for definition in event_definitions:
         e = Event()
@@ -103,9 +98,9 @@ def create_calendar_from_definitions(event_definitions, domain, users):
         e.end = definition["end"]
         e.location = definition["location"]
         
-        for user_name in definition["attendees"]:
-            email_prefix = users[user_name]
-            full_address = f"{user_name} <{email_prefix}@{domain}>"
+        for attendee_key in definition["attendees"]:
+            full_name, prefix = users_info[attendee_key]
+            full_address = f"{full_name} <{prefix}@{domain}>"
             e.add_attendee(full_address)
             
         cal.events.add(e)
@@ -123,17 +118,15 @@ def write_to_ics(calendar, filename):
     print(f"Generated {len(calendar.events)} non-overlapping events and saved to {filename}")
 
 if __name__ == "__main__":
-    domains, users = get_user_input()
+    domains = get_domains_input()
     
-    if domains and users:
-        # 1. Generate a single set of event definitions based on the users
-        print("\nGenerating event definitions...")
-        event_defs = generate_event_definitions(users)
+    if domains:
+        print("\nGenerating event definitions for Frodo and Gandalf...")
+        event_defs = generate_event_definitions()
         
-        # 2. Create and write a calendar for each domain
         print("\nCreating calendar files for each domain...")
         for domain in domains:
-            calendar = create_calendar_from_definitions(event_defs, domain, users)
+            calendar = create_calendar_from_definitions(event_defs, domain)
             script_dir = os.path.dirname(os.path.abspath(__file__))
             os.makedirs(script_dir, exist_ok=True)
             filename = os.path.join(script_dir, f"events_{domain}.ics")
