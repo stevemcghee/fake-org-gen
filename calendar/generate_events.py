@@ -1,4 +1,3 @@
-
 import random
 from datetime import datetime, timedelta
 from ics import Calendar, Event
@@ -28,8 +27,9 @@ def get_domains(args_domains):
         return None
     return domains
 
-def generate_event_definitions(months=6, num_events_range=(20, 40)):
-    """Generates a list of event definitions for Frodo and Gandalf."""
+def generate_event_definitions(users, months=6, num_events_range=(20, 40)):
+    """Generates a list of event definitions for the given users."""
+    user_keys = list(users.keys())
     shared_event_types = [
         "Council Meeting", "Journey Debrief", "Fireworks Planning", "Eagle Summit",
         "Reviewing the Map", "Second Breakfast Strategy"
@@ -63,25 +63,24 @@ def generate_event_definitions(months=6, num_events_range=(20, 40)):
             if is_overlapping(start_time, end_time, event_definitions): continue
 
             # 50% chance for a shared meeting, 50% for a solo meeting
-            if random.random() < 0.5:
+            if len(user_keys) > 1 and random.random() < 0.5:
                 # Shared meeting
+                attendee_keys = random.sample(user_keys, 2)
+                user1_name = users[attendee_keys[0]][0]
+                user2_name = users[attendee_keys[1]][0]
                 name = random.choice(shared_event_types)
-                description = f"{name} for Gandalf and Frodo"
-                attendees = ["gandalf", "frodo"]
+                description = f"{name} for {user1_name} and {user2_name}"
             else:
-                # Solo meeting, 50/50 split between Gandalf and Frodo
-                solo_user = random.choice(["gandalf", "frodo"])
+                # Solo meeting
+                solo_user_key = random.choice(user_keys)
+                user_name = users[solo_user_key][0]
                 name = random.choice(solo_event_types)
-                if solo_user == "gandalf":
-                    description = f"{name} for Gandalf"
-                    attendees = ["gandalf"]
-                else:
-                    description = f"{name} for Frodo"
-                    attendees = ["frodo"]
+                description = f"{name} for {user_name}"
+                attendee_keys = [solo_user_key]
 
             event_definitions.append({
                 "name": name, "description": description, "begin": start_time,
-                "end": end_time, "location": "Middle-earth", "attendees": attendees
+                "end": end_time, "location": "Middle-earth", "attendees": attendee_keys
             })
             break
         else:
@@ -89,13 +88,8 @@ def generate_event_definitions(months=6, num_events_range=(20, 40)):
     
     return event_definitions
 
-def create_calendar_from_definitions(event_definitions, domain):
+def create_calendar_from_definitions(event_definitions, domain, users):
     """Creates an ics.Calendar object from event definitions for a specific domain."""
-    users_info = {
-        "gandalf": ("gandalf the grey", "gandalf"),
-        "frodo": ("frodo baggins", "frodo.baggins")
-    }
-    
     cal = Calendar()
     for definition in event_definitions:
         e = Event()
@@ -106,7 +100,7 @@ def create_calendar_from_definitions(event_definitions, domain):
         e.location = definition["location"]
         
         for attendee_key in definition["attendees"]:
-            full_name, prefix = users_info[attendee_key]
+            full_name, prefix = users[attendee_key]
             full_address = f"{full_name} <{prefix}@{domain}>"
             e.add_attendee(full_address)
             
@@ -133,15 +127,22 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
+    # Default users are defined here. To change them, edit this dictionary.
+    default_users = {
+        "gandalf": ("gandalf the grey", "gandalf"),
+        "frodo": ("frodo baggins", "frodo.baggins")
+    }
+
     domains = get_domains(args.domains)
     
     if domains:
-        print("\nGenerating event definitions for Frodo and Gandalf...")
-        event_defs = generate_event_definitions()
+        user_names = " and ".join([info[0] for info in default_users.values()])
+        print(f"\nGenerating event definitions for {user_names}...")
+        event_defs = generate_event_definitions(default_users)
         
         print("\nCreating calendar files for each domain...")
         for domain in domains:
-            calendar = create_calendar_from_definitions(event_defs, domain)
+            calendar = create_calendar_from_definitions(event_defs, domain, default_users)
             script_dir = os.path.dirname(os.path.abspath(__file__))
             os.makedirs(script_dir, exist_ok=True)
             filename = os.path.join(script_dir, f"events_{domain}.ics")
