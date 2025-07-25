@@ -1,3 +1,4 @@
+
 import random
 from datetime import datetime, timedelta
 from ics import Calendar, Event
@@ -62,16 +63,14 @@ def generate_event_definitions(users, months=6, num_events_range=(20, 40)):
 
             if is_overlapping(start_time, end_time, event_definitions): continue
 
-            # 50% chance for a shared meeting, 50% for a solo meeting
+            attendee_keys = []
             if len(user_keys) > 1 and random.random() < 0.5:
-                # Shared meeting
                 attendee_keys = random.sample(user_keys, 2)
                 user1_name = users[attendee_keys[0]][0]
                 user2_name = users[attendee_keys[1]][0]
                 name = random.choice(shared_event_types)
                 description = f"{name} for {user1_name} and {user2_name}"
             else:
-                # Solo meeting
                 solo_user_key = random.choice(user_keys)
                 user_name = users[solo_user_key][0]
                 name = random.choice(solo_event_types)
@@ -127,7 +126,6 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    # Default users are defined here. To change them, edit this dictionary.
     default_users = {
         "gandalf": ("gandalf the grey", "gandalf"),
         "frodo": ("frodo baggins", "frodo.baggins")
@@ -137,14 +135,26 @@ if __name__ == "__main__":
     
     if domains:
         user_names = " and ".join([info[0] for info in default_users.values()])
-        print(f"\nGenerating event definitions for {user_names}...")
-        event_defs = generate_event_definitions(default_users)
+        print(f"\nGenerating one master list of events for {user_names}...")
+        all_event_defs = generate_event_definitions(default_users)
         
-        print("\nCreating calendar files for each domain...")
+        print("\nCreating a personalized calendar file for each user and domain...")
         for domain in domains:
-            calendar = create_calendar_from_definitions(event_defs, domain, default_users)
-            script_dir = os.path.dirname(os.path.abspath(__file__))
-            os.makedirs(script_dir, exist_ok=True)
-            filename = os.path.join(script_dir, f"events_{domain}.ics")
-            write_to_ics(calendar, filename)
+            for user_key, user_info in default_users.items():
+                # Filter the event list to only include events for the current user
+                user_event_defs = [
+                    event for event in all_event_defs if user_key in event["attendees"]
+                ]
+                
+                if not user_event_defs:
+                    print(f"No events for {user_info[0]} in domain {domain}. Skipping.")
+                    continue
+
+                calendar = create_calendar_from_definitions(user_event_defs, domain, default_users)
+                
+                script_dir = os.path.dirname(os.path.abspath(__file__))
+                os.makedirs(script_dir, exist_ok=True)
+                filename = os.path.join(script_dir, f"{user_key}_{domain}.ics")
+                write_to_ics(calendar, filename)
+                
         print("\nProcess complete.")
