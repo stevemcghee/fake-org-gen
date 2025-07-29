@@ -87,4 +87,72 @@ The `config.json` file allows for detailed configuration of the generated data.
 
 ## Individual Scripts
 
-While the `generate_all.py` script is the recommended way to use this project, the individual scripts can also be run directly. See the previous sections of this README for instructions on how to do so.
+### Setup
+
+#### 1. Get the Enron Email Corpus
+
+This project uses the Enron email dataset for its email generation features. To get the required `emails.csv` file, you first need to download the dataset.
+
+Run the following command in your terminal to download the dataset to your `~/Downloads` folder.
+
+```bash
+#!/bin/bash
+curl -L -o ~/Downloads/enron-email-dataset.zip -C - \
+  https://www.kaggle.com/api/v1/datasets/download/wcukierski/enron-email-dataset
+```
+
+After downloading, unzip the `enron-email-dataset.zip` file. Inside, you will find `emails.csv`.
+
+#### 2. Place the Data File
+
+Move the `emails.csv` file into the `email/` directory within this project. The scripts are configured to look for it there.
+
+The final structure should look like this:
+
+```
+fake-org-gen/
+├── calendar/
+│   └── generate_events.py
+└── email/
+    ├── emails.csv  <-- Place the file here
+    └── ... (other scripts)
+```
+
+### Fake File Generator
+
+The `docs/generate_files.py` script leverages the Gemini API to generate a variety of realistic, themed business files.
+
+**Features**
+
+- Takes an arbitrary business theme via the command line.
+- Generates unique content for every file.
+- Creates a variety of documents (memos, proposals), spreadsheets (financial statements, sales trackers), presentations (quarterly reviews, product pitches), and AI-generated images.
+- Uses AI-generated titles for descriptive filenames.
+- Formats presentations with concise, AI-generated bullet points.
+
+**Setup**
+
+1.  **Install Dependencies:** Navigate to the `docs` directory and install the required Python packages.
+    ```bash
+    cd docs
+    pip install -r requirements.txt
+    ```
+
+2.  **Set API Key:** The script requires a Gemini API key. Set it as an environment variable.
+    ```bash
+    export GEMINI_API_KEY="YOUR_API_KEY"
+    ```
+
+**Usage**
+
+Run the script from within the `docs` directory, providing a theme.
+
+```bash
+python3 generate_files.py --theme "Financial services for Ents in Middle-earth"
+```
+
+You can also customize the users, number of files, and organization name:
+
+```bash
+python3 generate_files.py --theme "Lembas bread bakery in Lothlorien" --users galadriel legolas --num-files 10 --org-name "Lothlorien Lembas Co."
+```
