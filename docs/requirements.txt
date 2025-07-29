@@ -1,0 +1,6 @@
+Faker
+python-docx
+XlsxWriter
+python-pptx
+Pillow
+google-genai

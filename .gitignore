@@ -12,6 +12,7 @@ venv/
 *.csv
 *.zip
 *.mbox
+*.ics
 
 # OS-specific
 .DS_Store
