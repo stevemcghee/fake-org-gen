@@ -22,3 +22,4 @@ venv/
 # IDEs
 .vscode/
 .idea/
+\n# Generated files\noutput/
