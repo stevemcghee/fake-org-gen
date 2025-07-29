@@ -13,6 +13,7 @@ venv/
 *.zip
 *.mbox
 *.ics
+docs/output/*
 
 # OS-specific
 .DS_Store
@@ -22,4 +23,3 @@ venv/
 # IDEs
 .vscode/
 .idea/
-\n# Generated files\noutput/
