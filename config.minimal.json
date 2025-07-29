@@ -1,0 +1,20 @@
+{
+  "domain": {
+    "description": "Required. The domain name to use for email addresses and calendar invites.",
+    "value": "shire.com"
+  },
+  "users": {
+    "description": "Required. A dictionary of users to generate data for. The key is the username, and the value is a list containing the user's full name and email prefix.",
+    "value": {
+      "gandalf": ["Gandalf the Grey", "gandalf"],
+      "frodo": ["Frodo Baggins", "frodo.baggins"]
+    }
+  },
+  "docs": {
+    "description": "Optional. Settings for the document generator.",
+    "theme": {
+      "description": "Required. The theme to use for the generated documents.",
+      "value": "Financial services for Ents in Middle-earth"
+    }
+  }
+}

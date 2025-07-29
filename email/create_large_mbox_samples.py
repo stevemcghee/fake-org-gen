@@ -5,6 +5,8 @@ import random
 import os
 import sys
 import mailbox
+import argparse
+import numpy as np
 
 def set_csv_field_size_limit():
     """Sets the CSV field size limit to the maximum possible value."""
@@ -22,10 +24,10 @@ def get_email_samples(csv_path, num_samples):
     from a large CSV file.
     """
     set_csv_field_size_limit()
-    
+
     reservoir = []
     message_col_index = -1
-    
+
     print("Step 1: Finding 'message' column...")
     with open(csv_path, 'r', encoding='utf-8', errors='ignore') as f:
         reader = csv.reader(f)
@@ -44,11 +46,11 @@ def get_email_samples(csv_path, num_samples):
     with open(csv_path, 'r', encoding='utf-8', errors='ignore') as f:
         reader = csv.reader(f)
         next(reader)  # Skip header
-        
+
         for i, row in enumerate(reader):
             if (i + 1) % 50000 == 0:
                 print(f"  ...processed {i + 1} rows...")
-                
+
             if len(row) <= message_col_index:
                 continue # Skip malformed rows
 
@@ -58,7 +60,7 @@ def get_email_samples(csv_path, num_samples):
                 j = random.randint(0, i)
                 if j < num_samples:
                     reservoir[j] = row[message_col_index]
-    
+
     print(f"Sampling complete. Acquired {len(reservoir)} samples.")
     return reservoir
 
@@ -69,7 +71,7 @@ def create_mbox_from_messages(messages, mbox_path):
     print(f"Creating mbox file at {mbox_path}...")
     mb = mailbox.mbox(mbox_path)
     mb.lock()
-    
+
     try:
         for msg_content in messages:
             # The content from the CSV is a full email, so we can add it directly
@@ -81,29 +83,28 @@ def create_mbox_from_messages(messages, mbox_path):
         mb.close()
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Create large mbox samples from a CSV file.")
+    parser.add_argument("--num-samples", type=int, default=10000, help="Total number of email samples to extract.")
+    parser.add_argument("--output-dir", default="email/email_samples", help="Directory to save the mbox files.")
+    parser.add_argument("--num-mbox-files", type=int, default=2, help="Number of mbox files to create.")
+    args = parser.parse_args()
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
     csv_file = os.path.join(script_dir, 'emails.csv')
-    output_dir = os.path.join(script_dir, 'email_samples')
-    os.makedirs(output_dir, exist_ok=True)
-    total_samples = 10000
-    
-    # 1. Get 10,000 unique samples
-    all_samples = get_email_samples(csv_file, total_samples)
-    
-    if len(all_samples) == total_samples:
-        # 2. Split the samples into two lists
-        samples_1 = all_samples[:5000]
-        samples_2 = all_samples[5000:]
-        
-        # 3. Create the two mbox files
-        mbox_path_1 = os.path.join(output_dir, 'samples_1.mbox')
-        create_mbox_from_messages(samples_1, mbox_path_1)
-        
-        mbox_path_2 = os.path.join(output_dir, 'samples_2.mbox')
-        create_mbox_from_messages(samples_2, mbox_path_2)
-        
+    os.makedirs(args.output_dir, exist_ok=True)
+
+    all_samples = get_email_samples(csv_file, args.num_samples)
+
+    if len(all_samples) == args.num_samples:
+        # Split the samples into chunks
+        sample_chunks = np.array_split(all_samples, args.num_mbox_files)
+
+        for i, chunk in enumerate(sample_chunks):
+            mbox_path = os.path.join(args.output_dir, f'samples_{i+1}.mbox')
+            create_mbox_from_messages(chunk.tolist(), mbox_path)
+
         print("\nProcess complete.")
     else:
-        print(f"\nProcess failed: Expected {total_samples} samples, but got {len(all_samples)}.")
+        print(f"\nProcess failed: Expected {args.num_samples} samples, but got {len(all_samples)}.")
 
 

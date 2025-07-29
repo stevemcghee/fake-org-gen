@@ -1,0 +1,90 @@
+{
+  "domain": {
+    "description": "Required. The domain name to use for email addresses and calendar invites.",
+    "value": "shire.com"
+  },
+  "users": {
+    "description": "Required. A dictionary of users to generate data for. The key is the username, and the value is a list containing the user's full name and email prefix.",
+    "value": {
+      "gandalf": ["Gandalf the Grey", "gandalf"],
+      "frodo": ["Frodo Baggins", "frodo.baggins"],
+      "samwise": ["Samwise Gamgee", "sam.gamgee"],
+      "aragorn": ["Aragorn", "aragorn"]
+    }
+  },
+  "calendar": {
+    "description": "Optional. Settings for the calendar event generator.",
+    "months_to_generate": {
+      "description": "Optional. The number of months to generate events for.",
+      "value": 6
+    },
+    "num_events_range": {
+      "description": "Optional. A list containing the minimum and maximum number of events to generate per month.",
+      "value": [20, 40]
+    },
+    "location": {
+      "description": "Optional. The default location for events.",
+      "value": "Middle-earth"
+    },
+    "shared_event_types": {
+      "description": "Optional. A list of event titles for meetings with multiple attendees.",
+      "value": [
+        "Council Meeting", "Journey Debrief", "Fireworks Planning", "Eagle Summit",
+        "Reviewing the Map", "Second Breakfast Strategy"
+      ]
+    },
+    "solo_event_types": {
+      "description": "Optional. A list of event titles for events with a single attendee.",
+      "value": [
+        "Pipe-weed Contemplation", "Reading Ancient Scrolls", "Practicing Smoke Rings",
+        "Mushroom Hunting", "Writing memoirs", "Avoiding Sackville-Bagginses"
+      ]
+    }
+  },
+  "email": {
+    "description": "Optional. Settings for the email generator.",
+    "num_samples": {
+      "description": "Optional. The total number of emails to extract from the source file.",
+      "value": 1000
+    },
+    "output_dir": {
+      "description": "Optional. The directory to save the generated .mbox files.",
+      "value": "email/email_samples"
+    },
+    "num_mbox_files": {
+      "description": "Optional. The number of .mbox files to split the emails into.",
+      "value": 2
+    }
+  },
+  "docs": {
+    "description": "Optional. Settings for the document generator.",
+    "num_files": {
+      "description": "Optional. The number of files to generate per user.",
+      "value": 10
+    },
+    "org_name": {
+      "description": "Optional. The name of the organization to use in the generated documents.",
+      "value": "Shire Holdings"
+    },
+    "theme": {
+      "description": "Required. The theme to use for the generated documents.",
+      "value": "Financial services for Ents in Middle-earth"
+    },
+    "file_types": {
+      "description": "Optional. A list of file types to generate.",
+      "value": ["document", "spreadsheet", "presentation", "image"]
+    },
+    "doc_types": {
+      "description": "Optional. A list of document types to generate.",
+      "value": ["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"]
+    },
+    "sheet_types": {
+      "description": "Optional. A list of spreadsheet types to generate.",
+      "value": ["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"]
+    },
+    "ppt_types": {
+      "description": "Optional. A list of presentation types to generate.",
+      "value": ["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"]
+    }
+  }
+}

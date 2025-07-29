@@ -1,4 +1,5 @@
 
+import json
 import random
 from datetime import datetime, timedelta
 from ics import Calendar, Event
@@ -11,40 +12,20 @@ def is_overlapping(start_time, end_time, existing_events):
     new_event_range = (start_time, end_time)
     for existing_event in existing_events:
         existing_range = (existing_event['begin'], existing_event['end'])
-        if (max(new_event_range[0], existing_range[0]) < 
+        if (max(new_event_range[0], existing_range[0]) <
                 min(new_event_range[1], existing_range[1])):
             return True
     return False
 
-def get_domains(args_domains):
-    """Gets domains from command-line args or an interactive prompt."""
-    if args_domains:
-        return [d.strip() for d in args_domains.split(',') if d.strip()]
-    
-    domains_str = input("Enter a comma-separated list of domains (e.g., domain1.com,domain2.net): ")
-    domains = [d.strip() for d in domains_str.split(',') if d.strip()]
-    if not domains:
-        print("Error: At least one domain must be provided.")
-        return None
-    return domains
-
-def generate_event_definitions(users, months=6, num_events_range=(20, 40)):
+def generate_event_definitions(users, months, num_events_range, location, shared_event_types, solo_event_types):
     """Generates a list of event definitions for the given users."""
     user_keys = list(users.keys())
-    shared_event_types = [
-        "Council Meeting", "Journey Debrief", "Fireworks Planning", "Eagle Summit",
-        "Reviewing the Map", "Second Breakfast Strategy"
-    ]
-    solo_event_types = [
-        "Pipe-weed Contemplation", "Reading Ancient Scrolls", "Practicing Smoke Rings", 
-        "Mushroom Hunting", "Writing memoirs", "Avoiding Sackville-Bagginses"
-    ]
-    
+
     pacific = pytz.timezone('US/Pacific')
     start_date = datetime.now(pacific)
     end_date = start_date + timedelta(days=30 * months)
     business_hours = (9, 17)
-    
+
     event_definitions = []
     max_attempts = 1000
 
@@ -79,12 +60,12 @@ def generate_event_definitions(users, months=6, num_events_range=(20, 40)):
 
             event_definitions.append({
                 "name": name, "description": description, "begin": start_time,
-                "end": end_time, "location": "Middle-earth", "attendees": attendee_keys
+                "end": end_time, "location": location, "attendees": attendee_keys
             })
             break
         else:
             print("Warning: Could not find a free slot after max attempts.")
-    
+
     return event_definitions
 
 def create_calendar_from_definitions(event_definitions, domain, users):
@@ -97,14 +78,14 @@ def create_calendar_from_definitions(event_definitions, domain, users):
         e.begin = definition["begin"]
         e.end = definition["end"]
         e.location = definition["location"]
-        
+
         for attendee_key in definition["attendees"]:
             full_name, prefix = users[attendee_key]
             full_address = f"{full_name} <{prefix}@{domain}>"
             e.add_attendee(full_address)
-            
+
         cal.events.add(e)
-        
+
     return cal
 
 def write_to_ics(calendar, filename):
@@ -112,49 +93,56 @@ def write_to_ics(calendar, filename):
     if not calendar.events:
         print(f"No events to write for {filename}.")
         return
-        
+
     with open(filename, 'w') as f:
         f.write(calendar.serialize())
     print(f"Generated {len(calendar.events)} non-overlapping events and saved to {filename}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generate fake calendar events.")
-    parser.add_argument(
-        '--domains', 
-        type=str, 
-        help='A comma-separated list of domains to generate calendars for (e.g., "example.com,test.org").'
-    )
+    parser.add_argument('--domains', required=True, help='A comma-separated list of domains.')
+    parser.add_argument('--users', required=True, help='A JSON string of users.')
+    parser.add_argument('--months', type=int, default=6, help='Number of months to generate events for.')
+    parser.add_argument('--num-events', default='20,40', help='Comma-separated range for number of events.')
+    parser.add_argument('--location', default='Middle-earth', help='Location for events.')
+    parser.add_argument('--shared-event-types', default='[]', help='JSON list of shared event types.')
+    parser.add_argument('--solo-event-types', default='[]', help='JSON list of solo event types.')
     args = parser.parse_args()
 
-    default_users = {
-        "gandalf": ("gandalf the grey", "gandalf"),
-        "frodo": ("frodo baggins", "frodo.baggins")
-    }
+    try:
+        users = json.loads(args.users)
+        shared_event_types = json.loads(args.shared_event_types)
+        solo_event_types = json.loads(args.solo_event_types)
+        num_events_range = tuple(map(int, args.num_events.split(',')))
+    except (json.JSONDecodeError, ValueError) as e:
+        print(f"Error parsing arguments: {e}")
+        exit(1)
 
-    domains = get_domains(args.domains)
-    
+    domains = [d.strip() for d in args.domains.split(',') if d.strip()]
+
     if domains:
-        user_names = " and ".join([info[0] for info in default_users.values()])
+        user_names = " and ".join([info[0] for info in users.values()])
         print(f"\nGenerating one master list of events for {user_names}...")
-        all_event_defs = generate_event_definitions(default_users)
-        
+        all_event_defs = generate_event_definitions(
+            users, args.months, num_events_range, args.location, shared_event_types, solo_event_types
+        )
+
         print("\nCreating a personalized calendar file for each user and domain...")
         for domain in domains:
-            for user_key, user_info in default_users.items():
-                # Filter the event list to only include events for the current user
+            for user_key, user_info in users.items():
                 user_event_defs = [
                     event for event in all_event_defs if user_key in event["attendees"]
                 ]
-                
+
                 if not user_event_defs:
                     print(f"No events for {user_info[0]} in domain {domain}. Skipping.")
                     continue
 
-                calendar = create_calendar_from_definitions(user_event_defs, domain, default_users)
-                
+                calendar = create_calendar_from_definitions(user_event_defs, domain, users)
+
                 script_dir = os.path.dirname(os.path.abspath(__file__))
                 os.makedirs(script_dir, exist_ok=True)
                 filename = os.path.join(script_dir, f"{user_key}_{domain}.ics")
                 write_to_ics(calendar, filename)
-                
+
         print("\nProcess complete.")

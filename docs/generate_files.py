@@ -16,29 +16,26 @@ from google.genai import types
 
 def sanitize_filename(title):
     """Converts a title into a safe filename."""
-    # Remove invalid characters
     sanitized = re.sub(r'[\\/*?:"<>|]', "", title)
-    # Replace spaces with underscores
     sanitized = sanitized.replace(" ", "_")
-    # Truncate to a reasonable length
     return sanitized[:100]
 
-def generate_unique_gemini_content(theme, file_type):
+def generate_unique_gemini_content(theme, file_type, doc_types, sheet_types, ppt_types):
     """Generates unique, themed content for a specific file type by calling the Gemini API."""
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise ValueError("GEMINI_API_KEY environment variable not set.")
-    
+
     client = genai.Client(api_key=api_key)
-    
+
     if file_type == "document":
-        doc_type = random.choice(["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"])
+        doc_type = random.choice(doc_types)
         content_prompt = f'- "doc_title": "A title for a {doc_type}".\n- "doc_body": "A 6-paragraph body for the document, relevant to the theme and the document type of {doc_type}".'
     elif file_type == "spreadsheet":
-        sheet_type = random.choice(["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"])
+        sheet_type = random.choice(sheet_types)
         content_prompt = f'- "sheet_title": "A title for a {sheet_type}".\n- "sheet_headers": "A list of 4-6 relevant column headers for the {sheet_type}".\n- "sheet_data": "A list of 15 lists, where each inner list is a row of realistic data for the {sheet_type}".'
     elif file_type == "presentation":
-        ppt_type = random.choice(["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"])
+        ppt_type = random.choice(ppt_types)
         content_prompt = f'- "ppt_title": "A title for a {ppt_type}".\n- "ppt_slide_details": "A JSON object with 4 slide titles as keys and a JSON list of 3-5 short, concise bullet points for each slide\u0027s body, relevant to a {ppt_type}".'
     elif file_type == "image":
         content_prompt = '- "image_prompt": "A concise, highly creative, and descriptive prompt for an AI image model to generate a photorealistic and thematic image, ensuring the prompt is unique and not a repeat of previous requests.".'
@@ -129,7 +126,7 @@ def generate_presentation(user, org_name, file_path, fake, theme_content):
     subtitle = slide.placeholders[1]
     title.text = f'{org_name} - {theme_content["ppt_title"]}'
     subtitle.text = f"Presented by {user}\n{fake.date()}"
-    
+
     bullet_slide_layout = prs.slide_layouts[1]
     for slide_title, bullet_points in theme_content.get("ppt_slide_details", {}).items():
         slide = prs.slides.add_slide(bullet_slide_layout)
@@ -137,14 +134,14 @@ def generate_presentation(user, org_name, file_path, fake, theme_content):
         shapes.title.text = slide_title
         body_shape = shapes.placeholders[1]
         tf = body_shape.text_frame
-        tf.clear() # Clear existing text
-        
+        tf.clear()
+
         if isinstance(bullet_points, list):
             for point in bullet_points:
                 p = tf.add_paragraph()
                 p.text = point
                 p.level = 1
-        else: # Fallback for unexpected format
+        else:
             p = tf.add_paragraph()
             p.text = str(bullet_points)
 
@@ -152,10 +149,14 @@ def generate_presentation(user, org_name, file_path, fake, theme_content):
 
 def main():
     parser = argparse.ArgumentParser(description="Generate unique, random files for a small business using the Gemini API.")
-    parser.add_argument("--users", nargs="+", default=["frodobaggins", "gandalf"], help="List of usernames.")
+    parser.add_argument("--users", nargs="+", required=True, help="List of usernames.")
     parser.add_argument("--num-files", type=int, default=5, help="Number of files per user.")
-    parser.add_argument("--org-name", default="Shire Holdings", help="Name of the organization.")
+    parser.add_argument("--org-name", required=True, help="Name of the organization.")
     parser.add_argument("--theme", required=True, help="Business model theme.")
+    parser.add_argument("--file-types", type=json.loads, default='["document", "spreadsheet", "presentation", "image"]', help="JSON list of file types to generate.")
+    parser.add_argument("--doc-types", type=json.loads, default='["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"]', help="JSON list of document types.")
+    parser.add_argument("--sheet-types", type=json.loads, default='["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"]', help="JSON list of spreadsheet types.")
+    parser.add_argument("--ppt-types", type=json.loads, default='["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"]', help="JSON list of presentation types.")
     args = parser.parse_args()
 
     fake = Faker()
@@ -175,16 +176,16 @@ def main():
         output_dir = os.path.join("output", user)
         os.makedirs(output_dir, exist_ok=True)
         for i in range(args.num_files):
-            file_type = random.choice(list(file_generators.keys()))
-            
+            file_type = random.choice(args.file_types)
+
             print(f"--- Generating unique content for {file_type} ---")
-            theme_content = generate_unique_gemini_content(args.theme, file_type)
-            
+            theme_content = generate_unique_gemini_content(args.theme, file_type, args.doc_types, args.sheet_types, args.ppt_types)
+
             if theme_content:
                 title = theme_content.get("doc_title") or theme_content.get("sheet_title") or theme_content.get("ppt_title") or f"image_{i+1}"
                 file_name = f"{sanitize_filename(title)}{file_extensions[file_type]}"
                 file_path = os.path.join(output_dir, file_name)
-                
+
                 print(f"--- Saving file: {file_path} ---")
                 try:
                     file_generators[file_type](user, args.org_name, file_path, fake, theme_content)
@@ -195,3 +196,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

@@ -1,0 +1,98 @@
+import json
+import subprocess
+import argparse
+import os
+
+def get_config_value(config, key, default=None):
+    """Gets a value from the config, supporting the new format."""
+    if key in config and "value" in config[key]:
+        return config[key]["value"]
+    return default
+
+def run_calendar_generator(domain, users, config):
+    print("--- Running Calendar Generator ---")
+    users_json = json.dumps(users)
+    months = get_config_value(config, "months_to_generate", 6)
+    num_events_range = get_config_value(config, "num_events_range", [20, 40])
+    location = get_config_value(config, "location", "Middle-earth")
+    shared_event_types = get_config_value(config, "shared_event_types", [])
+    solo_event_types = get_config_value(config, "solo_event_types", [])
+
+    cmd = [
+        "python3", "calendar/generate_events.py",
+        "--domains", domain,
+        "--users", users_json,
+        "--months", str(months),
+        "--num-events", f'{num_events_range[0]},{num_events_range[1]}',
+        "--location", location,
+        "--shared-event-types", json.dumps(shared_event_types),
+        "--solo-event-types", json.dumps(solo_event_types)
+    ]
+    subprocess.run(cmd)
+
+def run_email_generator(config):
+    print("--- Running Email Generator ---")
+    num_samples = get_config_value(config, "num_samples", 1000)
+    output_dir = get_config_value(config, "output_dir", "email/email_samples")
+    num_mbox_files = get_config_value(config, "num_mbox_files", 2)
+    cmd = [
+        "python3", "email/create_large_mbox_samples.py",
+        "--num-samples", str(num_samples),
+        "--output-dir", output_dir,
+        "--num-mbox-files", str(num_mbox_files)
+    ]
+    subprocess.run(cmd)
+
+def run_docs_generator(users, config):
+    print("--- Running Docs Generator ---")
+    user_list = " ".join(users.keys())
+    num_files = get_config_value(config, "num_files", 10)
+    org_name = get_config_value(config, "org_name", "Shire Holdings")
+    theme = get_config_value(config, "theme")
+    file_types = get_config_value(config, "file_types", ["document", "spreadsheet", "presentation", "image"])
+    doc_types = get_config_value(config, "doc_types", ["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"])
+    sheet_types = get_config_value(config, "sheet_types", ["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"])
+    ppt_types = get_config_value(config, "ppt_types", ["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"])
+
+    cmd = [
+        "python3", "docs/generate_files.py",
+        "--users", user_list,
+        "--num-files", str(num_files),
+        "--org-name", org_name,
+        "--theme", theme,
+        "--file-types", json.dumps(file_types),
+        "--doc-types", json.dumps(doc_types),
+        "--sheet-types", json.dumps(sheet_types),
+        "--ppt-types", json.dumps(ppt_types)
+    ]
+    subprocess.run(cmd)
+
+def main():
+    parser = argparse.ArgumentParser(description="Generate all fake organization data.")
+    parser.add_argument("--config", default="config.json", help="Path to the configuration file.")
+    args = parser.parse_args()
+
+    if not os.path.exists(args.config):
+        print(f"Error: Config file not found at {args.config}")
+        print("Please create a config.json file. You can use config.example.json as a template.")
+        return
+
+    with open(args.config) as f:
+        config = json.load(f)
+
+    domain = get_config_value(config, "domain")
+    users = get_config_value(config, "users")
+
+    if not domain or not users:
+        print("Error: 'domain' and 'users' must be defined in the config file.")
+        return
+
+    if "calendar" in config:
+        run_calendar_generator(domain, users, config["calendar"])
+    if "email" in config:
+        run_email_generator(config["email"])
+    if "docs" in config:
+        run_docs_generator(users, config["docs"])
+
+if __name__ == "__main__":
+    main()
