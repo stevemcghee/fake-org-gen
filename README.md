@@ -25,9 +25,7 @@ The `generate_all.py` script provides a single entry point to run all the data g
     Each subdirectory may have its own `requirements.txt` file. Install the dependencies for each module you intend to use.
 
     ```bash
-    pip install -r calendar/requirements.txt
-    pip install -r docs/requirements.txt
-    pip install -r email/requirements.txt
+    pip install -r calendar/requirements.txt -r docs/requirements.txt -r email/requirements.txt
     ```
 
 3.  **Set API Key:**

@@ -23,3 +23,8 @@ docs/output/*
 # IDEs
 .vscode/
 .idea/
+
+
+# project-specific config and output
+config.json
+output/
