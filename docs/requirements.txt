@@ -4,3 +4,4 @@ XlsxWriter
 python-pptx
 Pillow
 google-genai
+fpdf2
