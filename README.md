@@ -2,9 +2,11 @@
 
 This project contains a set of Python scripts to generate fake, but realistic, organizational data, including:
 
-*   **Calendars:** Generates `.ics` files with random, non-overlapping meetings for a set of users across multiple domains.
+*   **Calendars:** Generates `.ics` files with random, non-overlapping meetings for a set of users.
 *   **Emails:** Extracts sample emails from a large dataset (like the Enron corpus) and packages them into `.mbox` files.
-*   **Documents:** Generates a variety of themed documents, spreadsheets, presentations, and AI-generated images.
+*   **Documents:** Generates a variety of themed documents, spreadsheets, presentations, and AI-generated images for different business roles.
+
+All generated files are placed in the `output/` directory, organized into subdirectories for each module (`calendar`, `email`, `docs`).
 
 ## Quick Start
 
@@ -12,35 +14,45 @@ The `generate_all.py` script provides a single entry point to run all the data g
 
 ### Setup
 
-1.  **Create a `config.json` file:**
+1.  **Install Dependencies:**
 
-    Copy the `config.example.json` file to `config.json`. The `config.json` file defines the global `domain` and `users` for the generated data, as well as the settings for each module.
-
-    ```bash
-    cp config.example.json config.json
-    ```
-
-2.  **Install Dependencies:**
-
-    Each subdirectory may have its own `requirements.txt` file. Install the dependencies for each module you intend to use.
+    This project uses a virtual environment to manage dependencies. Install all necessary packages using the following command from the project root:
 
     ```bash
     pip install -r calendar/requirements.txt -r docs/requirements.txt -r email/requirements.txt
     ```
 
-3.  **Set API Key:**
+2.  **Create a `config.json` file:**
 
-    The document generation script requires a Gemini API key. Make sure to set it as an environment variable:
+    Copy the `config.example.json` file to `config.json`. This file is ignored by git, so you can safely add your API key.
 
     ```bash
-    export GEMINI_API_KEY="YOUR_API_KEY"
+    cp config.example.json config.json
     ```
+
+3.  **Set API Key:**
+
+    The document generation script requires a Gemini API key. You can provide this in two ways:
+
+    *   **(Recommended)** Add the key to your `config.json` file:
+        ```json
+        "gemini_api_key": {
+          "description": "Optional. Your Gemini API key...",
+          "value": "YOUR_API_KEY_HERE"
+        }
+        ```
+    *   **(Alternative)** Set it as an environment variable:
+        ```bash
+        export GEMINI_API_KEY="YOUR_API_KEY"
+        ```
+    The script will prioritize the key from `config.json` if it exists.
 
 ### Usage
 
-Run the `generate_all.py` script from the root of the project.
+Run the `generate_all.py` script from the root of the project. Make sure to activate the virtual environment first.
 
 ```bash
+source .venv/bin/activate
 python3 generate_all.py
 ```
 
@@ -52,105 +64,103 @@ python3 generate_all.py --config my_custom_config.json
 
 ### Configuration
 
-The `config.json` file allows for detailed configuration of the generated data.
+The `config.json` file allows for detailed configuration of the generated data. See `config.example.json` for a full list of options.
 
 **Global Options:**
 
 *   `domain`: The domain name to use for email addresses and calendar invites.
-*   `users`: A dictionary of users to generate data for. The key is the username, and the value is a list containing the user's full name and email prefix.
-
-**Calendar Options (`calendar`):**
-
-*   `months_to_generate`: The number of months to generate events for.
-*   `num_events_range`: A list containing the minimum and maximum number of events to generate per month.
-*   `location`: The default location for events.
-*   `shared_event_types`: A list of event titles for meetings with multiple attendees.
-*   `solo_event_types`: A list of event titles for events with a single attendee.
-
-**Email Options (`email`):**
-
-*   `num_samples`: The total number of emails to extract from the source file.
-*   `output_dir`: The directory to save the generated `.mbox` files.
-*   `num_mbox_files`: The number of `.mbox` files to split the emails into.
+*   `users`: A dictionary of users to generate data for.
 
 **Document Options (`docs`):**
 
 *   `num_files`: The number of files to generate per user.
 *   `org_name`: The name of the organization to use in the generated documents.
 *   `theme`: The theme to use for the generated documents.
-*   `file_types`: A list of file types to generate (e.g., "document", "spreadsheet", "presentation", "image").
-*   `doc_types`: A list of document types to generate (e.g., "Internal Memo", "Project Proposal").
-*   `sheet_types`: A list of spreadsheet types to generate (e.g., "Financial Statement", "Sales Tracker").
-*   `ppt_types`: A list of presentation types to generate (e.g., "Quarterly Review", "New Product Pitch").
+*   `roles`: A list of business roles to generate files for (e.g., "CEO", "CFO", "Sales_Manager"). The script will generate role-appropriate files.
+*   `file_types`, `doc_types`, `sheet_types`, `ppt_types`, `pdf_types`: These lists define the specific types of files and documents that can be generated. You can customize these to fit your needs.
 
-## Individual Scripts
+**Calendar and Email Options (`calendar`, `email`):**
 
-### Setup
+*   These sections contain options for configuring the calendar and email generators, including the output directories, which default to `output/calendar` and `output/email`.
 
-#### 1. Get the Enron Email Corpus
+## Email Data Setup
 
-This project uses the Enron email dataset for its email generation features. To get the required `emails.csv` file, you first need to download the dataset.
+The email generator requires the Enron email dataset.
 
-Run the following command in your terminal to download the dataset to your `~/Downloads` folder.
-
-```bash
-#!/bin/bash
-curl -L -o ~/Downloads/enron-email-dataset.zip -C - \
-  https://www.kaggle.com/api/v1/datasets/download/wcukierski/enron-email-dataset
-```
-
-After downloading, unzip the `enron-email-dataset.zip` file. Inside, you will find `emails.csv`.
-
-#### 2. Place the Data File
-
-Move the `emails.csv` file into the `email/` directory within this project. The scripts are configured to look for it there.
-
-The final structure should look like this:
-
-```
-fake-org-gen/
-├── calendar/
-│   └── generate_events.py
-└── email/
-    ├── emails.csv  <-- Place the file here
-    └── ... (other scripts)
-```
-
-### Fake File Generator
-
-The `docs/generate_files.py` script leverages the Gemini API to generate a variety of realistic, themed business files.
-
-**Features**
-
-- Takes an arbitrary business theme via the command line.
-- Generates unique content for every file.
-- Creates a variety of documents (memos, proposals), spreadsheets (financial statements, sales trackers), presentations (quarterly reviews, product pitches), and AI-generated images.
-- Uses AI-generated titles for descriptive filenames.
-- Formats presentations with concise, AI-generated bullet points.
-
-**Setup**
-
-1.  **Install Dependencies:** Navigate to the `docs` directory and install the required Python packages.
+1.  **Download the Data:**
     ```bash
-    cd docs
-    pip install -r requirements.txt
+    curl -L -o ~/Downloads/enron-email-dataset.zip -C - 
+      https://www.kaggle.com/api/v1/datasets/download/wcukierski/enron-email-dataset
+    ```
+2.  **Unzip and Place the File:**
+    Unzip the downloaded file and move `emails.csv` into the `email/enron/` directory. The final structure should be:
+    ```
+    fake-org-gen/
+    └── email/
+        └── enron/
+            └── emails.csv
     ```
 
-2.  **Set API Key:** The script requires a Gemini API key. Set it as an environment variable.
-    ```bash
-    export GEMINI_API_KEY="YOUR_API_KEY"
-    ```
+## Sample Invocations
 
-**Usage**
+Here are a few examples of how you could configure `config.json` for different fictional universes.
 
-Run the script from within the `docs` directory, providing a theme.
+### Example 1: Starship Enterprise
 
-```bash
-python3 generate_files.py --theme "Financial services for Ents in Middle-earth"
+To generate documents for the crew of the USS Enterprise, you could use a configuration like this:
+
+```json
+{
+  "domain": "starfleet.com",
+  "users": {
+    "picard": ["Jean-Luc Picard", "j.picard"],
+    "riker": ["William Riker", "w.riker"],
+    "data": ["Data", "data"]
+  },
+  "docs": {
+    "org_name": "USS Enterprise NCC-1701-D",
+    "theme": "Starship operations and diplomatic missions in the Alpha Quadrant",
+    "roles": ["Captain", "First Officer", "Android"]
+  }
+}
 ```
 
-You can also customize the users, number of files, and organization name:
+### Example 2: Hogwarts School of Witchcraft and Wizardry
 
-```bash
-python3 generate_files.py --theme "Lembas bread bakery in Lothlorien" --users galadriel legolas --num-files 10 --org-name "Lothlorien Lembas Co."
+To generate data for the staff at Hogwarts, you could use the following:
+
+```json
+{
+  "domain": "hogwarts.ac.uk",
+  "users": {
+    "dumbledore": ["Albus Dumbledore", "a.dumbledore"],
+    "mcgonagall": ["Minerva McGonagall", "m.mcgonagall"],
+    "snape": ["Severus Snape", "s.snape"]
+  },
+  "docs": {
+    "org_name": "Hogwarts School of Witchcraft and Wizardry",
+    "theme": "Managing a magical school and protecting students from dark wizards",
+    "roles": ["Headmaster", "Transfiguration Professor", "Potions Master"]
+  }
+}
+```
+
+### Example 3: The Pawnee Parks Department
+
+For a more down-to-earth example, here's a configuration for the Parks and Recreation department of Pawnee, Indiana:
+
+```json
+{
+  "domain": "pawnee.in.gov",
+  "users": {
+    "leslie": ["Leslie Knope", "l.knope"],
+    "ron": ["Ron Swanson", "r.swanson"],
+    "april": ["April Ludgate", "a.ludgate"]
+  },
+  "docs": {
+    "org_name": "Pawnee Parks and Recreation Department",
+    "theme": "Local government projects and community engagement initiatives",
+    "roles": ["Deputy Director", "Director", "Assistant"]
+  }
+}
 ```

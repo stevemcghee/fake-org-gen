@@ -90,7 +90,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    csv_file = os.path.join(script_dir, 'emails.csv')
+    csv_file = os.path.join(script_dir, 'enron', 'emails.csv')
     os.makedirs(args.output_dir, exist_ok=True)
 
     all_samples = get_email_samples(csv_file, args.num_samples)

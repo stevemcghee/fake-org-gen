@@ -107,6 +107,7 @@ if __name__ == "__main__":
     parser.add_argument('--location', default='Middle-earth', help='Location for events.')
     parser.add_argument('--shared-event-types', default='[]', help='JSON list of shared event types.')
     parser.add_argument('--solo-event-types', default='[]', help='JSON list of solo event types.')
+    parser.add_argument('--output-dir', default='.', help='Directory to save the ics files.')
     args = parser.parse_args()
 
     try:
@@ -140,9 +141,9 @@ if __name__ == "__main__":
 
                 calendar = create_calendar_from_definitions(user_event_defs, domain, users)
 
-                script_dir = os.path.dirname(os.path.abspath(__file__))
-                os.makedirs(script_dir, exist_ok=True)
-                filename = os.path.join(script_dir, f"{user_key}_{domain}.ics")
+                output_dir = args.output_dir
+                os.makedirs(output_dir, exist_ok=True)
+                filename = os.path.join(output_dir, f"{user_key}_{domain}.ics")
                 write_to_ics(calendar, filename)
 
         print("\nProcess complete.")

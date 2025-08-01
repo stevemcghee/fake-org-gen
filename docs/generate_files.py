@@ -1,5 +1,3 @@
-
-
 import argparse
 import os
 import random
@@ -21,28 +19,29 @@ def sanitize_filename(title):
     sanitized = sanitized.replace(" ", "_")
     return sanitized[:100]
 
-def generate_unique_gemini_content(theme, file_type, doc_types, sheet_types, ppt_types, pdf_types):
+def generate_unique_gemini_content(theme, role, file_type, doc_types, sheet_types, ppt_types, pdf_types, api_key=None):
     """Generates unique, themed content for a specific file type by calling the Gemini API."""
-    api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        raise ValueError("GEMINI_API_KEY environment variable not set.")
+        api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY not found in config or environment variables.")
 
     client = genai.Client(api_key=api_key)
 
     if file_type == "document":
         doc_type = random.choice(doc_types)
-        content_prompt = f'- "doc_title": "A title for a {doc_type}".\n- "doc_body": "A 6-paragraph body for the document, relevant to the theme and the document type of {doc_type}".'
+        content_prompt = f'- "doc_title": "A title for a {doc_type} created by a {role}".\n- "doc_body": "A 6-paragraph body for the document, relevant to the theme, the document type of {doc_type}, and the role of {role}".'
     elif file_type == "spreadsheet":
         sheet_type = random.choice(sheet_types)
-        content_prompt = f'- "sheet_title": "A title for a {sheet_type}".\n- "sheet_headers": "A list of 4-6 relevant column headers for the {sheet_type}".\n- "sheet_data": "A list of 15 lists, where each inner list is a row of realistic data for the {sheet_type}".'
+        content_prompt = f'- "sheet_title": "A title for a {sheet_type} created by a {role}".\n- "sheet_headers": "A list of 4-6 relevant column headers for the {sheet_type} created by a {role}".\n- "sheet_data": "A list of 15 lists, where each inner list is a row of realistic data for the {sheet_type} created by a {role}".'
     elif file_type == "presentation":
         ppt_type = random.choice(ppt_types)
-        content_prompt = f'- "ppt_title": "A title for a {ppt_type}".\n- "ppt_slide_details": "A JSON object with 4 slide titles as keys and a JSON list of 3-5 short, concise bullet points for each slide\u0027s body, relevant to a {ppt_type}".'
+        content_prompt = f'- "ppt_title": "A title for a {ppt_type} created by a {role}".\n- "ppt_slide_details": "A JSON object with 4 slide titles as keys and a JSON list of 3-5 short, concise bullet points for each slide\u0027s body, relevant to a {ppt_type} created by a {role}".'
     elif file_type == "image":
-        content_prompt = '- "image_prompt": "A concise, highly creative, and descriptive prompt for an AI image model to generate a photorealistic and thematic image, ensuring the prompt is unique and not a repeat of previous requests.".'
+        content_prompt = '- "image_prompt": "A concise, highly creative, and descriptive prompt for an AI image model. The prompt should be unique and not a repeat of previous requests. It should incorporate the theme and the creator\u0027s role, but also include variations in artistic style (e.g., photorealistic, oil painting, watercolor, art deco), setting (e.g., a grand hall, a sun-dappled forest, a modern office), and mood (e.g., serious, whimsical, optimistic).".'
     elif file_type == "pdf":
         pdf_type = random.choice(pdf_types)
-        content_prompt = f'- "pdf_title": "A title for a {pdf_type}".\n- "pdf_body": "A 6-paragraph body for the document, relevant to the theme and the document type of {pdf_type}".'
+        content_prompt = f'- "pdf_title": "A title for a {pdf_type} created by a {role}".\n- "pdf_body": "A 6-paragraph body for the document, relevant to the theme, the document type of {pdf_type}, and the role of {role}".'
     else:
         return None
 
@@ -50,13 +49,14 @@ def generate_unique_gemini_content(theme, file_type, doc_types, sheet_types, ppt
     You are a creative assistant that generates realistic, unique business documents for a fictional company.
     The business theme is: "{theme}"
     The requested file type is: "{file_type}"
+    The role of the creator is: "{role}"
 
     Generate content for the following items in valid JSON format:
     {content_prompt}
     """
     try:
         response = client.models.generate_content(
-            model="gemini-1.5-flash",
+            model="gemini-2.5-flash",
             contents=prompt
         )
         clean_response = response.text.strip().replace("```json", "").replace("```", "")
@@ -65,10 +65,13 @@ def generate_unique_gemini_content(theme, file_type, doc_types, sheet_types, ppt
         print(f"Error parsing Gemini text response: {e}")
         return None
 
-def generate_image_from_api(prompt, file_path):
+
+
+def generate_image_from_api(prompt, file_path, api_key=None):
     """Generates an image using the Gemini API."""
     try:
-        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            api_key = os.getenv("GEMINI_API_KEY")
         client = genai.Client(api_key=api_key)
         print(f"Submitting unique image prompt to Gemini: '{prompt}'")
         response = client.models.generate_content(
@@ -89,6 +92,7 @@ def generate_image_from_api(prompt, file_path):
         d = ImageDraw.Draw(img)
         d.text((10, 10), f"Image generation failed.\nError: {e}", fill=(255, 255, 255))
         img.save(file_path)
+
 
 def generate_document(user, org_name, file_path, fake, theme_content):
     doc = Document()
@@ -193,20 +197,35 @@ def main():
     parser.add_argument("--num-files", type=int, default=5, help="Number of files per user.")
     parser.add_argument("--org-name", required=True, help="Name of the organization.")
     parser.add_argument("--theme", required=True, help="Business model theme.")
+    parser.add_argument("--api-key", help="Gemini API key.")
+    parser.add_argument("--roles", nargs="+", default=["CEO", "CFO", "CTO", "HR_Manager", "Sales_Manager", "Marketing_Manager", "Project_Manager", "Accountant", "Software_Engineer", "Customer_Support_Specialist"], help="List of roles to generate files for.")
     parser.add_argument("--file-types", type=json.loads, default='["document", "spreadsheet", "presentation", "image", "pdf"]', help="JSON list of file types to generate.")
-    parser.add_argument("--doc-types", type=json.loads, default='["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"]', help="JSON list of document types.")
-    parser.add_argument("--sheet-types", type=json.loads, default='["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"]', help="JSON list of spreadsheet types.")
-    parser.add_argument("--ppt-types", type=json.loads, default='["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"]', help="JSON list of presentation types.")
-    parser.add_argument("--pdf-types", type=json.loads, default='["Invoice", "Client Agreement", "Press Release", "Employee Handbook"]', help="JSON list of PDF types.")
+    parser.add_argument("--doc-types", type=json.loads, default='["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes", "Business Requirements Document (BRD)", "Standard Operating Procedure (SOP)", "Marketing Plan", "Sales Strategy", "Quarterly Business Review (QBR)", "Press Release", "Employee Onboarding Checklist", "Performance Improvement Plan (PIP)", "Job Description", "Offer Letter", "Vendor Contract", "Non-Disclosure Agreement (NDA)", "Service Level Agreement (SLA)", "Incident Report", "Change Request Form"]', help="JSON list of document types.")
+    parser.add_argument("--sheet-types", type=json.loads, default='["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory", "Budget vs. Actuals", "Marketing Campaign Tracker", "Customer Relationship Management (CRM) Data", "Lead Generation Funnel", "Social Media Content Calendar", "Gantt Chart", "Resource Allocation Plan", "Risk Register", "Issue Tracker", "Payroll Register", "Accounts Receivable Aging", "Accounts Payable Aging", "Cash Flow Statement", "Burn Down Chart", "Capacity Planner"]', help="JSON list of spreadsheet types.")
+    parser.add_argument("--ppt-types", type=json.loads, default='["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide", "Sales Kick-Off (SKO) Presentation", "Investor Pitch Deck", "Company All-Hands Meeting", "Project Kick-off Presentation", "Go-to-Market Strategy", "Customer Onboarding Guide", "Product Demonstration", "Competitive Landscape Review", "Post-Mortem Analysis", "Annual General Meeting (AGM) Presentation", "Change Management Communication", "Technology Roadmap", "Financial Results Briefing", "HR Policy Overview", "Crisis Communication Plan", "Partner Program Overview"]', help="JSON list of presentation types.")
+    parser.add_argument("--pdf-types", type=json.loads, default='["Employee Manual", "Analyst Report", "User Guide", "Summary Report", "Design Guide", "Invoice", "Purchase Order", "White Paper", "Case Study", "Annual Report", "Compliance Certificate", "Legal Contract", "Technical Manual", "Product Brochure", "Marketing eBook", "Signed Agreement", "Official Company Statement", "Terms of Service", "Privacy Policy", "Security Whitepaper"]', help="JSON list of PDF types.")
     args = parser.parse_args()
 
     fake = Faker()
+
+    role_file_types = {
+        "CEO": ["document", "presentation", "pdf"],
+        "CFO": ["spreadsheet", "document", "pdf"],
+        "CTO": ["document", "presentation", "spreadsheet"],
+        "HR_Manager": ["document", "pdf", "spreadsheet"],
+        "Sales_Manager": ["presentation", "spreadsheet", "document"],
+        "Marketing_Manager": ["presentation", "document", "image"],
+        "Project_Manager": ["spreadsheet", "document", "presentation"],
+        "Accountant": ["spreadsheet", "pdf"],
+        "Software_Engineer": ["document", "spreadsheet"],
+        "Customer_Support_Specialist": ["document", "pdf"],
+    }
 
     file_generators = {
         "document": generate_document,
         "spreadsheet": generate_spreadsheet,
         "presentation": generate_presentation,
-        "image": lambda user, org, path, f, content: generate_image_from_api(content.get('image_prompt'), path),
+        "image": lambda user, org, path, f, content: generate_image_from_api(content.get('image_prompt'), path, api_key=args.api_key),
         "pdf": generate_pdf,
     }
     file_extensions = {
@@ -215,13 +234,17 @@ def main():
     }
 
     for user in args.users:
+        role = random.choice(args.roles)
         output_dir = os.path.join("output", user)
         os.makedirs(output_dir, exist_ok=True)
         for i in range(args.num_files):
-            file_type = random.choice(args.file_types)
+            if args.file_types:
+                file_type = random.choice(args.file_types)
+            else:
+                file_type = random.choice(role_file_types.get(role, ["document"]))
 
-            print(f"--- Generating unique content for {file_type} ---")
-            theme_content = generate_unique_gemini_content(args.theme, file_type, args.doc_types, args.sheet_types, args.ppt_types, args.pdf_types)
+            print(f"--- Generating unique content for {user} ({role}) - {file_type} ---")
+            theme_content = generate_unique_gemini_content(args.theme, role, file_type, args.doc_types, args.sheet_types, args.ppt_types, args.pdf_types, api_key=args.api_key)
 
             if theme_content:
                 title = theme_content.get("doc_title") or theme_content.get("sheet_title") or theme_content.get("ppt_title") or theme_content.get("pdf_title") or f"image_{i+1}"

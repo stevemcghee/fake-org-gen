@@ -17,6 +17,7 @@ def run_calendar_generator(domain, users, config):
     location = get_config_value(config, "location", "Middle-earth")
     shared_event_types = get_config_value(config, "shared_event_types", [])
     solo_event_types = get_config_value(config, "solo_event_types", [])
+    output_dir = get_config_value(config, "output_dir", "output/calendar")
 
     cmd = [
         "python3", "calendar/generate_events.py",
@@ -26,14 +27,15 @@ def run_calendar_generator(domain, users, config):
         "--num-events", f'{num_events_range[0]},{num_events_range[1]}',
         "--location", location,
         "--shared-event-types", json.dumps(shared_event_types),
-        "--solo-event-types", json.dumps(solo_event_types)
+        "--solo-event-types", json.dumps(solo_event_types),
+        "--output-dir", output_dir
     ]
     subprocess.run(cmd)
 
 def run_email_generator(config):
     print("--- Running Email Generator ---")
     num_samples = get_config_value(config, "num_samples", 1000)
-    output_dir = get_config_value(config, "output_dir", "email/email_samples")
+    output_dir = get_config_value(config, "output_dir", "output/email")
     num_mbox_files = get_config_value(config, "num_mbox_files", 2)
     cmd = [
         "python3", "email/create_large_mbox_samples.py",
@@ -49,11 +51,38 @@ def run_docs_generator(users, config):
     num_files = get_config_value(config, "num_files", 10)
     org_name = get_config_value(config, "org_name", "Shire Holdings")
     theme = get_config_value(config, "theme")
+    api_key = get_config_value(config, "gemini_api_key")
+    roles = get_config_value(config, "roles", ["CEO", "CFO", "CTO", "HR_Manager", "Sales_Manager", "Marketing_Manager", "Project_Manager", "Accountant", "Software_Engineer", "Customer_Support_Specialist"])
     file_types = get_config_value(config, "file_types", ["document", "spreadsheet", "presentation", "image", "pdf"])
-    doc_types = get_config_value(config, "doc_types", ["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"])
-    sheet_types = get_config_value(config, "sheet_types", ["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"])
-    ppt_types = get_config_value(config, "ppt_types", ["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"])
-    pdf_types = get_config_value(config, "pdf_types", ["Invoice", "Client Agreement", "Press Release", "Employee Handbook"])
+    doc_types = get_config_value(config, "doc_types", [
+        "Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes",
+        "Business Requirements Document (BRD)", "Standard Operating Procedure (SOP)", "Marketing Plan",
+        "Sales Strategy", "Quarterly Business Review (QBR)", "Press Release", "Employee Onboarding Checklist",
+        "Performance Improvement Plan (PIP)", "Job Description", "Offer Letter", "Vendor Contract",
+        "Non-Disclosure Agreement (NDA)", "Service Level Agreement (SLA)", "Incident Report", "Change Request Form"
+    ])
+    sheet_types = get_config_value(config, "sheet_types", [
+        "Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory",
+        "Budget vs. Actuals", "Marketing Campaign Tracker", "Customer Relationship Management (CRM) Data",
+        "Lead Generation Funnel", "Social Media Content Calendar", "Gantt Chart", "Resource Allocation Plan",
+        "Risk Register", "Issue Tracker", "Payroll Register", "Accounts Receivable Aging",
+        "Accounts Payable Aging", "Cash Flow Statement", "Burn Down Chart", "Capacity Planner"
+    ])
+    ppt_types = get_config_value(config, "ppt_types", [
+        "Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide",
+        "Sales Kick-Off (SKO) Presentation", "Investor Pitch Deck", "Company All-Hands Meeting",
+        "Project Kick-off Presentation", "Go-to-Market Strategy", "Customer Onboarding Guide",
+        "Product Demonstration", "Competitive Landscape Review", "Post-Mortem Analysis",
+        "Annual General Meeting (AGM) Presentation", "Change Management Communication", "Technology Roadmap",
+        "Financial Results Briefing", "HR Policy Overview", "Crisis Communication Plan", "Partner Program Overview"
+    ])
+    pdf_types = get_config_value(config, "pdf_types", [
+        "Employee Manual", "Analyst Report", "User Guide", "Summary Report", "Design Guide",
+        "Invoice", "Purchase Order", "White Paper", "Case Study", "Annual Report",
+        "Compliance Certificate", "Legal Contract", "Technical Manual", "Product Brochure",
+        "Marketing eBook", "Signed Agreement", "Official Company Statement", "Terms of Service",
+        "Privacy Policy", "Security Whitepaper"
+    ])
 
     cmd = [
         "python3", "docs/generate_files.py",
@@ -61,12 +90,15 @@ def run_docs_generator(users, config):
         "--num-files", str(num_files),
         "--org-name", org_name,
         "--theme", theme,
+        "--roles", *roles,
         "--file-types", json.dumps(file_types),
         "--doc-types", json.dumps(doc_types),
         "--sheet-types", json.dumps(sheet_types),
         "--ppt-types", json.dumps(ppt_types),
         "--pdf-types", json.dumps(pdf_types)
     ]
+    if api_key:
+        cmd.extend(["--api-key", api_key])
     subprocess.run(cmd)
 
 def main():

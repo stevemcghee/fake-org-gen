@@ -26,18 +26,56 @@
       "description": "Optional. The default location for events.",
       "value": "Middle-earth"
     },
+    "output_dir": {
+      "description": "Optional. The directory to save the generated .ics files.",
+      "value": "output/calendar"
+    },
     "shared_event_types": {
       "description": "Optional. A list of event titles for meetings with multiple attendees.",
       "value": [
         "Council Meeting", "Journey Debrief", "Fireworks Planning", "Eagle Summit",
-        "Reviewing the Map", "Second Breakfast Strategy"
+        "Reviewing the Map", "Second Breakfast Strategy", "The White Council Session",
+        "Entmoot Discussion on Isengard", "Dwarven Mining Expedition Briefing", "Ranger Reconnaissance Planning",
+        "Elven Strategy Meeting at Rivendell", "Gondorian War Council", "Rohan Riders Muster",
+        "Shire Moot on Pipe-weed Quality", "Trade Negotiations with the Men of Dale", "Hobbit Birthday Party Committee",
+        "Planning the Long-expected Party", "Dragon-sickness Prevention Seminar", "Mithril Vest Quality Assurance",
+        "Lembas Bread Baking Workshop", "Alliance Formation Summit", "Border Patrol Coordination",
+        "Review of Ancient Prophecies", "Palantir Usage Ethics Committee", "Defense of the Shire Planning",
+        "Celebration of Durin's Day", "Feast of Starlight Planning", "The Great Elven Feast",
+        "Bilbo's Farewell Party Logistics", "War Efforts Fundraising Gala", "Siege Preparation Drill",
+        "Scouring of the Shire Town Hall", "Rebuilding Osgiliath Committee", "Coronation Planning for King Elessar",
+        "Meeting of the Fellowship of the Ring", "Council of the Heirs of Isildur", "Hobbit Mathom-house Acquisitions",
+        "Dwarven Rune-smithing Guild Meeting", "Elven Songwriting Collaboration", "Rangers of the North Assembly",
+        "Gondorian Scribe Guild Meeting", "Rohan Horse-breeders Association", "Shire Post-masters Conference",
+        "Cross-realms Trade Route Analysis", "Orc Invasion Defense Strategy", "Warg Activity Report",
+        "Reviewing Reports from the Watchtowers", "Misty Mountains Pass Security Meeting", "Old Forest Preservation Society",
+        "Beorn's Honey Cake Recipe Exchange", "Tom Bombadil's Nature Walk", "Goldberry's River-daughter Council",
+        "Fangorn Forest Health Assessment", "Paths of the Dead Maintenance Committee", "Grey Havens Departure Scheduling",
+        "Southfarthing Leaf Quality Control", "Bree Prancing Pony Innkeepers' Meeting", "Lost Tales of Gondolin Reading Group"
       ]
     },
     "solo_event_types": {
       "description": "Optional. A list of event titles for events with a single attendee.",
       "value": [
         "Pipe-weed Contemplation", "Reading Ancient Scrolls", "Practicing Smoke Rings",
-        "Mushroom Hunting", "Writing memoirs", "Avoiding Sackville-Bagginses"
+        "Mushroom Hunting", "Writing memoirs", "Avoiding Sackville-Bagginses",
+        "Translating Dwarven Runes", "Studying the Red Book of Westmarch", "Polishing Sting",
+        "Tending to the Gardens of Rivendell", "Practicing Archery in Lothlórien", "Scouting the Borders of Mordor",
+        "Composing a Lay of Lúthien", "Charting the Stars over the Anduin", "Mending a Hobbit-cloak",
+        "Researching Genealogies of the Dúnedain", "Sharpening Narsil's Shards", "Studying Istari Lore",
+        "Foraging for Athelas", "Carving a new walking staff", "Deciphering Saruman's Grimoire",
+        "Personal Time at the Mirror of Galadriel", "Patrolling the Brandywine Bridge", "Writing a Letter to Gondor",
+        "Tending to a Pony's Needs", "Mapping the Mines of Moria", "Fishing in the Great River",
+        "Practicing Elvish Calligraphy", "Memorizing the Riddles in the Dark", "Cataloging new plants for the herbarium",
+        "Bird-watching for Crebain from Dunland", "Maintaining the Beacon Fires", "Quiet Reflection at the Havens of Sirion",
+        "Studying the architecture of Minas Tirith", "Drafting a new chapter for the Red Book", "Inspecting the quality of Longbottom Leaf",
+        "A walk to the Old Mill", "Polishing the Horn of Gondor", "Repairing a broken bowstring",
+        "Studying maps of the Lonely Mountain", "Preparing a draft of a new Shire law", "A quiet pint at The Green Dragon",
+        "Visiting the tombs of the Kings", "Weeding the potato patch", "Translating Quenya poetry",
+        "Practicing sword forms", "Reviewing the history of the Silmarils", "A quiet evening of whittling",
+        "Checking the cellars of Bag End", "Feeding the swans of Dol Amroth", "Sketching the Argonath",
+        "Updating the inventory of the Mathom-house", "Personal meditation and reflection", "Studying the properties of Mithril",
+        "Composing a tune on the harp", "A quiet walk along the banks of the Withywindle", "Reading up on the history of Númenor"
       ]
     }
   },
@@ -49,7 +87,7 @@
     },
     "output_dir": {
       "description": "Optional. The directory to save the generated .mbox files.",
-      "value": "email/email_samples"
+      "value": "output/email"
     },
     "num_mbox_files": {
       "description": "Optional. The number of .mbox files to split the emails into.",
@@ -70,25 +108,58 @@
       "description": "Required. The theme to use for the generated documents.",
       "value": "Financial services for Ents in Middle-earth"
     },
+    "gemini_api_key": {
+      "description": "Optional. Your Gemini API key. If not provided, the script will check for the GEMINI_API_KEY environment variable.",
+      "value": "YOUR_API_KEY_HERE"
+    },
+    "roles": {
+      "description": "Optional. A list of roles to generate files for.",
+      "value": ["CEO", "CFO", "CTO", "HR_Manager", "Sales_Manager", "Marketing_Manager", "Project_Manager", "Accountant", "Software_Engineer", "Customer_Support_Specialist"]
+    },
     "file_types": {
       "description": "Optional. A list of file types to generate.",
       "value": ["document", "spreadsheet", "presentation", "image", "pdf"]
     },
-    "doc_types": {
+        "doc_types": {
       "description": "Optional. A list of document types to generate.",
-      "value": ["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"]
+      "value": [
+        "Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes",
+        "Business Requirements Document (BRD)", "Standard Operating Procedure (SOP)", "Marketing Plan",
+        "Sales Strategy", "Quarterly Business Review (QBR)", "Press Release", "Employee Onboarding Checklist",
+        "Performance Improvement Plan (PIP)", "Job Description", "Offer Letter", "Vendor Contract",
+        "Non-Disclosure Agreement (NDA)", "Service Level Agreement (SLA)", "Incident Report", "Change Request Form"
+      ]
     },
     "sheet_types": {
       "description": "Optional. A list of spreadsheet types to generate.",
-      "value": ["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"]
+      "value": [
+        "Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory",
+        "Budget vs. Actuals", "Marketing Campaign Tracker", "Customer Relationship Management (CRM) Data",
+        "Lead Generation Funnel", "Social Media Content Calendar", "Gantt Chart", "Resource Allocation Plan",
+        "Risk Register", "Issue Tracker", "Payroll Register", "Accounts Receivable Aging",
+        "Accounts Payable Aging", "Cash Flow Statement", "Burn Down Chart", "Capacity Planner"
+      ]
     },
     "ppt_types": {
       "description": "Optional. A list of presentation types to generate.",
-      "value": ["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"]
+      "value": [
+        "Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide",
+        "Sales Kick-Off (SKO) Presentation", "Investor Pitch Deck", "Company All-Hands Meeting",
+        "Project Kick-off Presentation", "Go-to-Market Strategy", "Customer Onboarding Guide",
+        "Product Demonstration", "Competitive Landscape Review", "Post-Mortem Analysis",
+        "Annual General Meeting (AGM) Presentation", "Change Management Communication", "Technology Roadmap",
+        "Financial Results Briefing", "HR Policy Overview", "Crisis Communication Plan", "Partner Program Overview"
+      ]
     },
     "pdf_types": {
       "description": "Optional. a list of PDF types to generate.",
-      "value": ["Employee Manual", "Analyst Report", "User Guide", "Summary Report", "Design Guide"]
+      "value": [
+        "Employee Manual", "Analyst Report", "User Guide", "Summary Report", "Design Guide",
+        "Invoice", "Purchase Order", "White Paper", "Case Study", "Annual Report",
+        "Compliance Certificate", "Legal Contract", "Technical Manual", "Product Brochure",
+        "Marketing eBook", "Signed Agreement", "Official Company Statement", "Terms of Service",
+        "Privacy Policy", "Security Whitepaper"
+      ]
     }
   }
 }
