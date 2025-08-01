@@ -72,7 +72,7 @@
     },
     "file_types": {
       "description": "Optional. A list of file types to generate.",
-      "value": ["document", "spreadsheet", "presentation", "image"]
+      "value": ["document", "spreadsheet", "presentation", "image", "pdf"]
     },
     "doc_types": {
       "description": "Optional. A list of document types to generate.",
@@ -85,6 +85,10 @@
     "ppt_types": {
       "description": "Optional. A list of presentation types to generate.",
       "value": ["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"]
+    },
+    "pdf_types": {
+      "description": "Optional. a list of PDF types to generate.",
+      "value": ["Employee Manual", "Analyst Report", "User Guide", "Summary Report", "Design Guide"]
     }
   }
 }

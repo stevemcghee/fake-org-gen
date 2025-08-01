@@ -49,10 +49,11 @@ def run_docs_generator(users, config):
     num_files = get_config_value(config, "num_files", 10)
     org_name = get_config_value(config, "org_name", "Shire Holdings")
     theme = get_config_value(config, "theme")
-    file_types = get_config_value(config, "file_types", ["document", "spreadsheet", "presentation", "image"])
+    file_types = get_config_value(config, "file_types", ["document", "spreadsheet", "presentation", "image", "pdf"])
     doc_types = get_config_value(config, "doc_types", ["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"])
     sheet_types = get_config_value(config, "sheet_types", ["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"])
     ppt_types = get_config_value(config, "ppt_types", ["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"])
+    pdf_types = get_config_value(config, "pdf_types", ["Invoice", "Client Agreement", "Press Release", "Employee Handbook"])
 
     cmd = [
         "python3", "docs/generate_files.py",
@@ -63,7 +64,8 @@ def run_docs_generator(users, config):
         "--file-types", json.dumps(file_types),
         "--doc-types", json.dumps(doc_types),
         "--sheet-types", json.dumps(sheet_types),
-        "--ppt-types", json.dumps(ppt_types)
+        "--ppt-types", json.dumps(ppt_types),
+        "--pdf-types", json.dumps(pdf_types)
     ]
     subprocess.run(cmd)
 

@@ -11,6 +11,7 @@ from docx import Document
 import xlsxwriter
 from pptx import Presentation
 from PIL import Image
+from fpdf import FPDF
 from google import genai
 from google.genai import types
 
@@ -20,7 +21,7 @@ def sanitize_filename(title):
     sanitized = sanitized.replace(" ", "_")
     return sanitized[:100]
 
-def generate_unique_gemini_content(theme, file_type, doc_types, sheet_types, ppt_types):
+def generate_unique_gemini_content(theme, file_type, doc_types, sheet_types, ppt_types, pdf_types):
     """Generates unique, themed content for a specific file type by calling the Gemini API."""
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -39,6 +40,9 @@ def generate_unique_gemini_content(theme, file_type, doc_types, sheet_types, ppt
         content_prompt = f'- "ppt_title": "A title for a {ppt_type}".\n- "ppt_slide_details": "A JSON object with 4 slide titles as keys and a JSON list of 3-5 short, concise bullet points for each slide\u0027s body, relevant to a {ppt_type}".'
     elif file_type == "image":
         content_prompt = '- "image_prompt": "A concise, highly creative, and descriptive prompt for an AI image model to generate a photorealistic and thematic image, ensuring the prompt is unique and not a repeat of previous requests.".'
+    elif file_type == "pdf":
+        pdf_type = random.choice(pdf_types)
+        content_prompt = f'- "pdf_title": "A title for a {pdf_type}".\n- "pdf_body": "A 6-paragraph body for the document, relevant to the theme and the document type of {pdf_type}".'
     else:
         return None
 
@@ -102,6 +106,42 @@ def generate_document(user, org_name, file_path, fake, theme_content):
             doc.add_paragraph(paragraph)
     doc.save(file_path)
 
+def generate_pdf(user, org_name, file_path, fake, theme_content):
+    pdf = FPDF()
+    pdf.add_page()
+    pdf.set_font("Helvetica", "B", 16)
+
+    # Encode title and body text to handle unsupported characters
+    def encode_text(text):
+        # Replace common problematic characters
+        replacements = {
+            '’': "'", '–': '-', '“': '"', '”': '"', '—': '--', '…': '...'
+        }
+        for old, new in replacements.items():
+            text = text.replace(old, new)
+        # Encode to latin-1, ignoring any characters that can't be represented
+        return text.encode('latin-1', 'ignore').decode('latin-1')
+
+    title = f'{org_name} - {theme_content["pdf_title"]}'
+    pdf.cell(0, 10, encode_text(title), new_x="LMARGIN", new_y="NEXT", align='C')
+
+    pdf.set_font("Helvetica", "", 12)
+    pdf.cell(0, 10, f"Prepared by: {user}", new_x="LMARGIN", new_y="NEXT", align='C')
+    pdf.ln(10)
+
+    pdf_body = theme_content.get("pdf_body", "")
+    
+    if isinstance(pdf_body, list):
+        for paragraph in pdf_body:
+            pdf.multi_cell(0, 10, encode_text(paragraph))
+            pdf.ln(5)
+    elif isinstance(pdf_body, str):
+        for paragraph in pdf_body.split('\n'):
+            pdf.multi_cell(0, 10, encode_text(paragraph))
+            pdf.ln(5)
+            
+    pdf.output(file_path)
+
 def generate_spreadsheet(user, org_name, file_path, fake, theme_content):
     wb = xlsxwriter.Workbook(file_path)
     ws = wb.add_worksheet()
@@ -153,10 +193,11 @@ def main():
     parser.add_argument("--num-files", type=int, default=5, help="Number of files per user.")
     parser.add_argument("--org-name", required=True, help="Name of the organization.")
     parser.add_argument("--theme", required=True, help="Business model theme.")
-    parser.add_argument("--file-types", type=json.loads, default='["document", "spreadsheet", "presentation", "image"]', help="JSON list of file types to generate.")
+    parser.add_argument("--file-types", type=json.loads, default='["document", "spreadsheet", "presentation", "image", "pdf"]', help="JSON list of file types to generate.")
     parser.add_argument("--doc-types", type=json.loads, default='["Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes"]', help="JSON list of document types.")
     parser.add_argument("--sheet-types", type=json.loads, default='["Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory"]', help="JSON list of spreadsheet types.")
     parser.add_argument("--ppt-types", type=json.loads, default='["Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide"]', help="JSON list of presentation types.")
+    parser.add_argument("--pdf-types", type=json.loads, default='["Invoice", "Client Agreement", "Press Release", "Employee Handbook"]', help="JSON list of PDF types.")
     args = parser.parse_args()
 
     fake = Faker()
@@ -166,10 +207,11 @@ def main():
         "spreadsheet": generate_spreadsheet,
         "presentation": generate_presentation,
         "image": lambda user, org, path, f, content: generate_image_from_api(content.get('image_prompt'), path),
+        "pdf": generate_pdf,
     }
     file_extensions = {
         "document": ".docx", "spreadsheet": ".xlsx",
-        "presentation": ".pptx", "image": ".png",
+        "presentation": ".pptx", "image": ".png", "pdf": ".pdf",
     }
 
     for user in args.users:
@@ -179,10 +221,10 @@ def main():
             file_type = random.choice(args.file_types)
 
             print(f"--- Generating unique content for {file_type} ---")
-            theme_content = generate_unique_gemini_content(args.theme, file_type, args.doc_types, args.sheet_types, args.ppt_types)
+            theme_content = generate_unique_gemini_content(args.theme, file_type, args.doc_types, args.sheet_types, args.ppt_types, args.pdf_types)
 
             if theme_content:
-                title = theme_content.get("doc_title") or theme_content.get("sheet_title") or theme_content.get("ppt_title") or f"image_{i+1}"
+                title = theme_content.get("doc_title") or theme_content.get("sheet_title") or theme_content.get("ppt_title") or theme_content.get("pdf_title") or f"image_{i+1}"
                 file_name = f"{sanitize_filename(title)}{file_extensions[file_type]}"
                 file_path = os.path.join(output_dir, file_name)
 
