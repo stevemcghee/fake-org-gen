@@ -51,7 +51,17 @@ def generate_unique_gemini_content(theme, role, file_type, doc_types, sheet_type
         ppt_type = random.choice(ppt_types)
         content_prompt = f'- "ppt_title": "A title for a {ppt_type} created by a {role}".\n- "ppt_slide_details": "A JSON object with 4 slide titles as keys and a JSON list of 3-5 short, concise bullet points for each slide\u0027s body, relevant to a {ppt_type} created by a {role}".'
     elif file_type == "image":
-        content_prompt = '- "image_prompt": "A concise, highly creative, and descriptive prompt for an AI image model. The prompt should be unique and not a repeat of previous requests. It should incorporate the theme and the creator\u0027s role, but also include variations in artistic style (e.g., photorealistic, oil painting, watercolor, art deco), setting (e.g., a grand hall, a sun-dappled forest, a modern office), and mood (e.g., serious, whimsical, optimistic).".'
+        art_styles = ["photorealistic", "oil painting", "watercolor", "art deco", "cyberpunk", "fantasy art", "impressionistic", "surreal", "minimalist", "art nouveau"]
+        settings = ["a grand hall", "a sun-dappled forest", "a modern office", "a futuristic cityscape", "a subterranean cavern", "a mountaintop observatory", "a bustling marketplace"]
+        moods = ["serious", "whimsical", "optimistic", "mysterious", "serene", "dramatic", "inspirational"]
+        compositions = ["wide shot", "close-up", "dynamic angle", "symmetrical", "asymmetrical", "leading lines", "rule of thirds"]
+
+        style = random.choice(art_styles)
+        setting = random.choice(settings)
+        mood = random.choice(moods)
+        composition = random.choice(compositions)
+
+        content_prompt = f'- "image_prompt": "A concise, highly creative, and descriptive prompt for an AI image model. The prompt must be unique and not a repeat of previous requests. Incorporate the following elements: theme: \'{theme}\', creator\u0027s role: \'{role}\', artistic style: \'{style}\', setting: \'{setting}\', mood: \'{mood}\', composition: \'{composition}\'. Be imaginative and avoid clichés.".'
     elif file_type == "pdf":
         pdf_type = random.choice(pdf_types)
         content_prompt = f'- "pdf_title": "A title for a {pdf_type} created by a {role}".\n- "pdf_body": "A 6-paragraph body for the document, relevant to the theme, the document type of {pdf_type}, and the role of {role}".'
