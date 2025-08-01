@@ -45,30 +45,30 @@ def run_email_generator(config):
     ]
     subprocess.run(cmd)
 
-def run_docs_generator(users, config):
+def run_docs_generator(users, config, api_key=None):
     print("--- Running Docs Generator ---")
     user_list = " ".join(users.keys())
-    num_files = get_config_value(config, "num_files", 10)
-    org_name = get_config_value(config, "org_name", "Shire Holdings")
-    theme = get_config_value(config, "theme")
-    api_key = get_config_value(config, "gemini_api_key")
-    roles = get_config_value(config, "roles", ["CEO", "CFO", "CTO", "HR_Manager", "Sales_Manager", "Marketing_Manager", "Project_Manager", "Accountant", "Software_Engineer", "Customer_Support_Specialist"])
-    file_types = get_config_value(config, "file_types", ["document", "spreadsheet", "presentation", "image", "pdf"])
-    doc_types = get_config_value(config, "doc_types", [
+    docs_config = config.get("docs", {})
+    num_files = get_config_value(docs_config, "num_files", 10)
+    org_name = get_config_value(docs_config, "org_name", "Shire Holdings")
+    theme = get_config_value(docs_config, "theme")
+    roles = get_config_value(docs_config, "roles", ["CEO", "CFO", "CTO", "HR_Manager", "Sales_Manager", "Marketing_Manager", "Project_Manager", "Accountant", "Software_Engineer", "Customer_Support_Specialist"])
+    file_types = get_config_value(docs_config, "file_types", ["document", "spreadsheet", "presentation", "image", "pdf"])
+    doc_types = get_config_value(docs_config, "doc_types", [
         "Internal Memo", "Project Proposal", "Competitive Analysis", "Budget Report", "Meeting Minutes",
         "Business Requirements Document (BRD)", "Standard Operating Procedure (SOP)", "Marketing Plan",
         "Sales Strategy", "Quarterly Business Review (QBR)", "Press Release", "Employee Onboarding Checklist",
         "Performance Improvement Plan (PIP)", "Job Description", "Offer Letter", "Vendor Contract",
         "Non-Disclosure Agreement (NDA)", "Service Level Agreement (SLA)", "Incident Report", "Change Request Form"
     ])
-    sheet_types = get_config_value(config, "sheet_types", [
+    sheet_types = get_config_value(docs_config, "sheet_types", [
         "Financial Statement", "Project Timeline", "Sales Tracker", "Inventory List", "Employee Directory",
         "Budget vs. Actuals", "Marketing Campaign Tracker", "Customer Relationship Management (CRM) Data",
         "Lead Generation Funnel", "Social Media Content Calendar", "Gantt Chart", "Resource Allocation Plan",
         "Risk Register", "Issue Tracker", "Payroll Register", "Accounts Receivable Aging",
         "Accounts Payable Aging", "Cash Flow Statement", "Burn Down Chart", "Capacity Planner"
     ])
-    ppt_types = get_config_value(config, "ppt_types", [
+    ppt_types = get_config_value(docs_config, "ppt_types", [
         "Quarterly Review", "New Product Pitch", "Market Trend Analysis", "Team Training Guide",
         "Sales Kick-Off (SKO) Presentation", "Investor Pitch Deck", "Company All-Hands Meeting",
         "Project Kick-off Presentation", "Go-to-Market Strategy", "Customer Onboarding Guide",
@@ -76,7 +76,7 @@ def run_docs_generator(users, config):
         "Annual General Meeting (AGM) Presentation", "Change Management Communication", "Technology Roadmap",
         "Financial Results Briefing", "HR Policy Overview", "Crisis Communication Plan", "Partner Program Overview"
     ])
-    pdf_types = get_config_value(config, "pdf_types", [
+    pdf_types = get_config_value(docs_config, "pdf_types", [
         "Employee Manual", "Analyst Report", "User Guide", "Summary Report", "Design Guide",
         "Invoice", "Purchase Order", "White Paper", "Case Study", "Annual Report",
         "Compliance Certificate", "Legal Contract", "Technical Manual", "Product Brochure",
@@ -116,17 +116,18 @@ def main():
 
     domain = get_config_value(config, "domain")
     users = get_config_value(config, "users")
+    api_key = get_config_value(config, "gemini_api_key")
 
     if not domain or not users:
         print("Error: 'domain' and 'users' must be defined in the config file.")
         return
 
     if "calendar" in config:
-        run_calendar_generator(domain, users, config["calendar"])
+        run_calendar_generator(domain, users, config.get("calendar", {}))
     if "email" in config:
-        run_email_generator(config["email"])
+        run_email_generator(config.get("email", {}))
     if "docs" in config:
-        run_docs_generator(users, config["docs"])
+        run_docs_generator(users, config, api_key)
 
 if __name__ == "__main__":
     main()

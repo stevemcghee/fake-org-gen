@@ -12,6 +12,10 @@
       "aragorn": ["Aragorn", "aragorn"]
     }
   },
+  "gemini_api_key": {
+    "description": "Optional. Your Gemini API key. If not provided, the script will check for the GEMINI_API_KEY environment variable.",
+    "value": "YOUR_API_KEY_HERE"
+  },
   "calendar": {
     "description": "Optional. Settings for the calendar event generator.",
     "months_to_generate": {
@@ -107,10 +111,6 @@
     "theme": {
       "description": "Required. The theme to use for the generated documents.",
       "value": "Financial services for Ents in Middle-earth"
-    },
-    "gemini_api_key": {
-      "description": "Optional. Your Gemini API key. If not provided, the script will check for the GEMINI_API_KEY environment variable.",
-      "value": "YOUR_API_KEY_HERE"
     },
     "roles": {
       "description": "Optional. A list of roles to generate files for.",

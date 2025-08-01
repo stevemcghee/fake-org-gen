@@ -117,6 +117,14 @@ To generate documents for the crew of the USS Enterprise, you could use a config
     "riker": ["William Riker", "w.riker"],
     "data": ["Data", "data"]
   },
+  "calendar": {
+    "shared_event_types": [
+      "Senior Staff Meeting", "Diplomatic Briefing", "Holodeck Maintenance Review", "Stellar Cartography Update"
+    ],
+    "solo_event_types": [
+      "Prepare for First Contact", "Review Tactical Logs", "Personal Log Entry", "Diagnostics"
+    ]
+  },
   "docs": {
     "org_name": "USS Enterprise NCC-1701-D",
     "theme": "Starship operations and diplomatic missions in the Alpha Quadrant",
@@ -137,6 +145,14 @@ To generate data for the staff at Hogwarts, you could use the following:
     "mcgonagall": ["Minerva McGonagall", "m.mcgonagall"],
     "snape": ["Severus Snape", "s.snape"]
   },
+  "calendar": {
+    "shared_event_types": [
+      "Order of the Phoenix Meeting", "Staff Meeting", "Review House Cup Standings", "Prepare for Sorting Ceremony"
+    ],
+    "solo_event_types": [
+      "Researching Horcruxes", "Lesson Planning", "Brewing Potions", "Detention Supervision"
+    ]
+  },
   "docs": {
     "org_name": "Hogwarts School of Witchcraft and Wizardry",
     "theme": "Managing a magical school and protecting students from dark wizards",
@@ -156,6 +172,14 @@ For a more down-to-earth example, here's a configuration for the Parks and Recre
     "leslie": ["Leslie Knope", "l.knope"],
     "ron": ["Ron Swanson", "r.swanson"],
     "april": ["April Ludgate", "a.ludgate"]
+  },
+  "calendar": {
+    "shared_event_types": [
+      "City Council Meeting", "Public Forum", "Budget Meeting", "Team Meeting"
+    ],
+    "solo_event_types": [
+      "Prepare for Town Hall", "Woodworking", "Scheduling Meetings", "Work on Binder"
+    ]
   },
   "docs": {
     "org_name": "Pawnee Parks and Recreation Department",
