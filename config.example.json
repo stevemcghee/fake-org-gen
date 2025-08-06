@@ -9,7 +9,26 @@
       "gandalf": ["Gandalf the Grey", "gandalf"],
       "frodo": ["Frodo Baggins", "frodo.baggins"],
       "samwise": ["Samwise Gamgee", "sam.gamgee"],
-      "aragorn": ["Aragorn", "aragorn"]
+      "aragorn": ["Aragorn", "aragorn"],
+      "pippin": ["Peregrin Took", "pippin.took"]
+    }
+  },
+  "contacts": {
+    "description": "Optional. A dictionary of other people who may be included on emails, calendar events, etc.",
+    "value": {
+        "Bilbo": ["Bilbo Baggins", "bilbo.baggins"],
+        "Merry": ["Meriadoc Brandybuck", "merry.brandybuck"],
+        "Gimli": ["Gimli son of Glóin", "gimli.sonofgloin"],
+        "Legolas": ["Legolas Greenleaf", "legolas.of.mirkwood"],
+        "Boromir": ["Boromir of Gondor", "boromir.whitecity"],
+        "Faramir": ["Faramir of Gondor", "faramir.captain"],
+        "Théoden": ["Théoden King of Rohan", "theoden.king"],
+        "Éowyn": ["Éowyn of Rohan", "eowyn.shieldmaiden"],
+        "Éomer": ["Éomer of Rohan", "eomer.marshal"],
+        "Galadriel": ["Galadriel of Lórien", "galadriel.ladyoflight"],
+        "Elrond": ["Elrond Half-elven", "elrond.perodhel"],
+        "Arwen": ["Arwen Undómiel", "arwen.evenstar"],
+        "Gollum": ["Sméagol", "smeagol.precious"],
     }
   },
   "gemini_api_key": {

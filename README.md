@@ -103,7 +103,7 @@ The email generator requires the Enron email dataset.
 
 1.  **Download the Data:**
     ```bash
-    curl -L -o ~/Downloads/enron-email-dataset.zip -C - 
+    curl -L -o ~/Downloads/enron-email-dataset.zip -C - \
       https://www.kaggle.com/api/v1/datasets/download/wcukierski/enron-email-dataset
     ```
 2.  **Unzip and Place the File:**
@@ -202,3 +202,7 @@ For a more down-to-earth example, here's a configuration for the Parks and Recre
   }
 }
 ```
+
+## Other bits
+You may want to change the mbox files so that all the "to" addresses are to a person in the organization. This could probably be done as part of the python scripts, but here's an ad hoc way:
+regex search for `^To: .*?cpets.joonix.net>?` and replace with `To: <mailbox-owner>@cpets.joonix.net`

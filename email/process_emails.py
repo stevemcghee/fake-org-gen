@@ -15,6 +15,8 @@ import csv
 import random
 import os
 import sys
+import json
+import re
 
 # Increase the field size limit for the CSV reader
 max_int = sys.maxsize
@@ -26,11 +28,27 @@ while True:
     except OverflowError:
         max_int = int(max_int / 2)
 
-def sample_emails_from_csv(csv_path, num_samples=5):
+def load_replacement_emails(config_path):
+    """Loads users and domain from config.json to generate a list of emails."""
+    try:
+        with open(config_path, 'r') as f:
+            config = json.load(f)
+        domain = config['domain']['value']
+        users = config['users']['value'].keys()
+        return [f"{user}@{domain}" for user in users]
+    except (FileNotFoundError, KeyError) as e:
+        print(f"Error loading or parsing config file {config_path}: {e}")
+        return []
+
+def sample_emails_from_csv(csv_path, replacement_emails, num_samples=5):
     """
     Uses reservoir sampling to select a random sample of emails from a large
-    CSV file and saves them as .eml files.
+    CSV file, replaces email addresses, and saves them as .eml files.
     """
+    if not replacement_emails:
+        print("No replacement emails provided. Cannot perform email replacement.")
+        return
+
     reservoir = []
     message_col_index = -1
     
@@ -69,6 +87,11 @@ def sample_emails_from_csv(csv_path, num_samples=5):
     for i, sample in enumerate(reservoir):
         if len(sample) > message_col_index:
             email_content = sample[message_col_index]
+            
+            # Replace all email addresses found in the message
+            email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+            email_content = re.sub(email_pattern, lambda m: random.choice(replacement_emails), email_content)
+
             file_path = os.path.join(output_dir, f"sample_email_{i + 1}.eml")
             with open(file_path, 'w', encoding='utf-8') as f_out:
                 f_out.write(email_content)
@@ -80,4 +103,8 @@ def sample_emails_from_csv(csv_path, num_samples=5):
 if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
     csv_file = os.path.join(script_dir, 'emails.csv')
-    sample_emails_from_csv(csv_file, num_samples=100)
+    config_file = os.path.join(script_dir, '..', 'config.json')
+    
+    replacement_emails = load_replacement_emails(config_file)
+    if replacement_emails:
+        sample_emails_from_csv(csv_file, replacement_emails, num_samples=100)
