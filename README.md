@@ -103,7 +103,7 @@ The email generator requires the Enron email dataset.
 
 1.  **Download the Data:**
     ```bash
-    curl -L -o ~/Downloads/enron-email-dataset.zip -C - 
+    curl -L -o ~/Downloads/enron-email-dataset.zip -C - \
       https://www.kaggle.com/api/v1/datasets/download/wcukierski/enron-email-dataset
     ```
 2.  **Unzip and Place the File:**

@@ -19,6 +19,8 @@ import sys
 import mailbox
 import argparse
 import numpy as np
+import json
+import re
 
 def set_csv_field_size_limit():
     """Sets the CSV field size limit to the maximum possible value."""
@@ -76,7 +78,21 @@ def get_email_samples(csv_path, num_samples):
     print(f"Sampling complete. Acquired {len(reservoir)} samples.")
     return reservoir
 
-def create_mbox_from_messages(messages, mbox_path):
+def replace_email_addresses(text, replacement_emails, contacts):
+    if not replacement_emails and not contacts:
+        return text
+
+    choices = replacement_emails * 10 + contacts
+    if not choices:
+        return text
+
+    def repl(match):
+        return random.choice(choices)
+
+    email_regex = r'[\w\.-]+@[\w\.-]+'
+    return re.sub(email_regex, repl, text)
+
+def create_mbox_from_messages(messages, mbox_path, replacement_emails, contacts):
     """
     Creates a single .mbox file from a list of email message strings.
     """
@@ -86,6 +102,7 @@ def create_mbox_from_messages(messages, mbox_path):
 
     try:
         for msg_content in messages:
+            msg_content = replace_email_addresses(msg_content, replacement_emails, contacts)
             # The content from the CSV is a full email, so we can add it directly
             msg = mailbox.mboxMessage(msg_content.encode('utf-8', 'ignore'))
             mb.add(msg)
@@ -102,6 +119,28 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_path = os.path.join(script_dir, '..', 'config.json')
+
+    if not os.path.exists(config_path):
+        print(f"Error: config.json not found at {config_path}")
+        sys.exit(1)
+
+    with open(config_path, 'r') as f:
+        config = json.load(f)
+
+    domain = config.get('domain', {}).get('value')
+    if not domain:
+        print("Error: 'domain' not found in config.json")
+        sys.exit(1)
+
+    users = config.get('users', {}).get('value', {})
+    replacement_emails = [f"{v[1]}@{domain}" for v in users.values()]
+
+    contacts_config = config.get('contacts', {}).get('value')
+    contacts = []
+    if contacts_config:
+        contacts = [f"{v[1]}@{domain}" for v in contacts_config.values()]
+
     csv_file = os.path.join(script_dir, 'enron', 'emails.csv')
     os.makedirs(args.output_dir, exist_ok=True)
 
@@ -113,7 +152,7 @@ if __name__ == "__main__":
 
         for i, chunk in enumerate(sample_chunks):
             mbox_path = os.path.join(args.output_dir, f'samples_{i+1}.mbox')
-            create_mbox_from_messages(chunk.tolist(), mbox_path)
+            create_mbox_from_messages(chunk.tolist(), mbox_path, replacement_emails, contacts)
 
         print("\nProcess complete.")
     else:
