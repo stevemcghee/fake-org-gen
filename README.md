@@ -28,12 +28,21 @@ The `generate_all.py` script provides a single entry point to run all the data g
 
 ### Setup
 
-1.  **Install Dependencies:**
+1.  **Create and Activate a Virtual Environment:**
 
-    This project uses a virtual environment to manage dependencies. Install all necessary packages using the following command from the project root:
+    It's recommended to use a virtual environment to manage dependencies. From the project root, run:
 
     ```bash
-    pip install -r calendar/requirements.txt -r docs/requirements.txt -r email/requirements.txt
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+
+2.  **Install Dependencies:**
+
+    Install all necessary packages using the following command from the project root:
+
+    ```bash
+    pip install -r requirements.txt
     ```
 
 2.  **Create a `config.json` file:**
