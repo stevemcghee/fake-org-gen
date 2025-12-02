@@ -1,0 +1,10 @@
+ics
+pytz
+Faker
+python-docx
+XlsxWriter
+python-pptx
+Pillow
+google-generativeai
+fpdf2
+numpy
